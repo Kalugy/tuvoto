@@ -1,6 +1,7 @@
+<!doctype html>
 @extends ('layout')
 
 @section('contenido')
-<h1>Saludos{{$nombre}}</h1>
+<h1>HOME</h1>
 
 @stop

@@ -1,6 +1,6 @@
 @extends ('layout')
 
 @section('contenido')
-<h1>Saludos{{$nombre}}</h1>
+<hi>Contacto </hi>
 
 @stop

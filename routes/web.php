@@ -16,16 +16,25 @@
 // });
 
 
-Route::get('/',['as'=>'home', function () {
-	return view('home');
-}]);
+Route::get('/',['as'=>'home', 'uses'=>'PagesControler@home']);
+
+Route::get('contactanos',['as'=>'contactos', 'uses'=>'PagesControler@contact']);
+
+
+Route::post('contacto', 'PagesControler@mensajes');
+
+Route::get('saludos/{nombre?}',['as'=>'saludos', 'uses'=>'PagesControler@salud'])->where('nombre',"[A-Za-z]+") ;
 
 //para cambiar el nombre de la URL mas rapido
-Route::get('contactanos', ['as'=>'contactos', function () {
+/*Route::get('contactanos', ['as'=>'contactos', function () {
 	return view('contacto');
-}]);
+}]);*/
+
+
+
+
 //para enviar por url un parametro
-Route::get('saludos/{nombre?}',['as'=>'saludos', function ($nombre="invitado") {
+/*Route::get('saludos/{nombre?}',['as'=>'saludos', function ($nombre="invitado") {
 
 	// return view('saludo',['nombre' => $nombre ]) 
 	// return view('saludo')=>with(['nombre' => $nombre ]);
@@ -40,4 +49,4 @@ Route::get('saludos/{nombre?}',['as'=>'saludos', function ($nombre="invitado") {
 	return view ('saludo',compact('nombre','html','consolas'));
 
 
-}])->where('nombre',"[A-Za-z]+") ;
+}])->where('nombre',"[A-Za-z]+") ;*/

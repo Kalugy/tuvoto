@@ -29,5 +29,15 @@ Route::get('saludos/{nombre?}',['as'=>'saludos', function ($nombre="invitado") {
 
 	// return view('saludo',['nombre' => $nombre ]) 
 	// return view('saludo')=>with(['nombre' => $nombre ]);
-	return view ('saludo',compact('nombre'));
+	$html="<h2>hey what's up</h2>";
+
+	$consolas=[
+		"Wii",
+		"aaa",
+		"wiiyou"
+	];
+
+	return view ('saludo',compact('nombre','html','consolas'));
+
+
 }])->where('nombre',"[A-Za-z]+") ;

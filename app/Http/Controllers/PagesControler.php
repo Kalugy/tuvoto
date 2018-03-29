@@ -15,6 +15,12 @@ class PagesControler extends Controller
 	//esto es para crear controlador de vistas
     public function home() {
 		return view('home');
+
+		// return response ('contenido de respuesta',201)
+		// 								->header('X-TOKEN','secret')
+		// 								->header('X-TOKEN-2','secret-2')
+		// 								->header('X-COOKIE','cookie');
+
 	}
 
 
@@ -23,12 +29,27 @@ class PagesControler extends Controller
 	}
 
 	public function mensajes() {
-		//return $this->request->all();
-		if($request->has('nombre'))
+		//$data= $this->request->all();
+
+		//return response()->json(['data'=>$data],202)->header('X-TOKEN','secret');
+
+		/*if($this->request->has('nombre'))
 		{
 			return "si tiene nombre";
 		}
-		return "no tiene nombre";
+		return "no tiene nombre";*/
+
+
+		//return redirect('/');//para ir a una pagina luego de enviar
+
+		// return redirect()
+		// 	->route('contacto')
+		// 	->with('info','tu mensaje ha sido enviado correctamente');
+
+		return back()
+			>with('info','tu mensaje ha sido enviado correctamente');
+			//regresa a la pagina anterior
+
 	}
 
 

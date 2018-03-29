@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-	<title>home</title>
+	<title>homes</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
 
   </head>
     <body>
 
-    	<h1>home</h1>
+    	<h1>homes</h1>
 
     	<header>
     		<nav>

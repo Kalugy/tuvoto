@@ -13,8 +13,8 @@ class PagesControler extends Controller
 	}
 
 	//esto es para crear controlador de vistas
-    public function home() {
-		return view('home');
+    public function introduccion() {
+		return view('introduccion');
 
 		// return response ('contenido de respuesta',201)
 		// 								->header('X-TOKEN','secret')

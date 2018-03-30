@@ -25,9 +25,10 @@
 
     	<header>
     		<nav>
-    			<a class="{{ activemenu('/')}}" href= "{{ route ('home') }}"  >inicio</a>
+    			<a class="{{ activemenu('/')}}" href= "{{ route ('introduccion') }}"  >introduccion</a>
     			<a class="{{ activemenu('saludos/*') }}" href= "{{ route ('saludos','dan') }}" >Saludo</a>
-    			<a class="{{ activemenu('contactanos') }}" href= "{{ route ('contactos') }}">Contacto</a>
+    			<a class="{{ activemenu('mensajes/create') }}" href= "{{ route('mensajes.create') }}">Contacto</a>
+                <a class="{{ activemenu('mensajes') }}" href= "{{ route('mensajes.index') }}">Mensaje</a>
     		</nav>
     	</header>	
 

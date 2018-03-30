@@ -43,23 +43,7 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->all();
-        //guardar 1 forma
-
-        // DB::table('messages')->insert([
-
-        //     "nombre"=> $request->input('nombre'),
-        //     "email"=> $request->input('email'),
-        //     "mensaje"=> $request->input('mensaje'),
-        //     "created_at"=> Carbon::now(),
-        //     "updated_at"=> Carbon::now(),
-        // ]);
-
-        //2forma $message= new Message;
-        // $message->nombre= $request->input('nombre');
-        // $message->email= $request->input('email');
-        // $message->mensaje= $request->input('mensaje');
-        // $mensaje->save();
+        
 
         Message::create($request->all());
 
@@ -106,17 +90,7 @@ class MessagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //actualizamos
-
-        // DB::table('messages')->where('id',$id)->update([
-
-        //     "nombre"=> $request->input('nombre'),
-        //     "email"=> $request->input('email'),
-        //     "mensaje"=> $request->input('mensaje'),
-        //     "updated_at"=> Carbon::now(),
-
-        // ]);
-
+        
         $mensaje=Message::findOrfail($id)->update($request->all());
 
         //redireccionamos
@@ -131,8 +105,7 @@ class MessagesController extends Controller
      */
     public function destroy($id)
     {
-        //eliminar
-        // DB::table('messages')->where('id',$id)->delete();
+        
 
         $mensaje=Message::findOrfail($id)->delete();
         //redireccionar

@@ -29,6 +29,12 @@
     			<a class="{{ activemenu('saludos/*') }}" href= "{{ route ('saludos','dan') }}" >Saludo</a>
     			<a class="{{ activemenu('mensajes/create') }}" href= "{{ route('mensajes.create') }}">Contacto</a>
                 <a class="{{ activemenu('mensajes') }}" href= "{{ route('mensajes.index') }}">Mensaje</a>
+                @if(auth()->check())
+                <a href= "\logout">Cerrar sesion de {{auth()->user()->name }}</a>
+                @endif
+                @if(auth()->guest())
+                <a class="{{ activemenu('login') }}" href= "{{ "/login" }}">Login</a>
+                @endif
     		</nav>
     	</header>	
 

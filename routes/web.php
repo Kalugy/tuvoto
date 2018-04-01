@@ -4,8 +4,8 @@
 // Route::get('test',function(){
 
 // 	$user=new App\User;
-// 	$user->name='d';
-// 	$user->password=('d');
+// 	$user->name='daniel';
+// 	$user->password=bcrypt('123');
 // 	$user->save();
 // 	return $user;
 
@@ -20,8 +20,18 @@ Route::get('saludos/{nombre?}',['as'=>'saludos', 'uses'=>'PagesControler@salud']
 
 Route::resource('mensajes','MessagesController');
 
+Route::resource('inicios','IniciosController');
 
-Route::get('login','Auth\LoginController@showLoginForm');
+
+// Route::get('/administrador', function()
+// {
+//     return view('administrador');
+// });
+// Route::get('mensajes', ['as' =>'messages.index','uses'=>'MessagesController@index']);
+//Route::get('administrador', ['as'->'inicio.index'],'InicioController');
+
+
+Route::get('login','Auth\LoginController@showLoginForm') -> name('login');;
 Route::post('login','Auth\LoginController@login');
 
 Route::get('logout','Auth\LoginController@logout');

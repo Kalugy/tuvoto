@@ -23,8 +23,11 @@ class IniciosController extends Controller
         
 
         $propuestas = Propuesta::all();
+        // View::share('varinicio');
+        // return view('introduccion',compact('varinicio'));
 
         return view('inicios.index',compact('varinicio','varcandidato','propuestas'));
+
     }
 
     /**
@@ -86,9 +89,12 @@ class IniciosController extends Controller
     {
         $varinicio=Inicio::findOrfail($id)->update($request->all());
         
-
+        //return Redirect()->route('introduccion', $varinicio);
+        // return view('introduccion')->with('varinicio',$varinicio);
         //redireccionamos
         return redirect()->route('inicios.index');
+        
+        
     }
 
     /**

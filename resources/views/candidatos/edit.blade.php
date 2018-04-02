@@ -3,7 +3,7 @@
 @section('contenido')
 <h1>Editar candidato</h1>
 
-<form method="POST" action="{{ route('candidatos.update',$varcandidato->idcandidato) }}">
+<form method="POST" action="{{ route('candidatos.update',$varcandidato->id) }}">
 	{!!method_field('PUT') !!}
 	<input type="hidden" name="_token" value="{{ Session::token() }}">
 

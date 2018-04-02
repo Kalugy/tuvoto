@@ -55,7 +55,7 @@
 	    <th>Partido</th>
 	    <th>Perfil</th>
 	    <th>programa</th>
-	    <th>idpropuesta</th>
+	    <th>Propuestas</th>
 	    <th>accion</th>
 
 
@@ -72,19 +72,23 @@
 			<td> {{$can->partido }}</td>
 			<td> {{$can->perfil }}</td>
 			<td> {{$can->nombreprograma }}</td>
-			<td> {{$can->idpropuesta }}</td>
+			<td>
+				<a href= "{{route('candidatos.show',$can->idpropuesta)}}">
+				{{$can->idpropuesta }}
+			</a>
+			 </td>
 			
 
 			<td>
 				
-				<a href="{{ route('candidatos.edit',$can->idcandidato)}}" >Editar</a>
-				{{-- <form style="display:inline" method="POST" action="{{route('mensajes.destroy',$mensaje->id)}}">
+				<a href="{{ route('candidatos.edit',$can->id)}}" >Editar</a>
+				<form style="display:inline" method="POST" action="{{route('candidatos.destroy',$can->id)}}">
 					{!!csrf_field()!!}
 					{!!method_field('DELETE')!!}
 					<button type="submit">Eliminar</button>
 					
 
-				</form> --}}
+				</form>
 			</td>
 
 	  	</tr>

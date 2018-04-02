@@ -14,12 +14,12 @@ class CreateCandidatosTable extends Migration
     public function up()
     {
         Schema::create('candidatos', function (Blueprint $table) {
-            $table->increments('idcandidato');
+            $table->increments('id');
             $table->string('candidato');
             $table->string('partido');
             $table->string('perfil');
             $table->string('nombreprograma');
-            $table->integer('idpropuesta');
+            $table->integer('idpropuesta')->unique();
             $table->timestamps();
         });
     }

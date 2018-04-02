@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Candidato;
-
+use App\Propuesta;
 use Illuminate\Http\Request;
 
-
+use DB;
 
 
 class CandidatosController extends Controller
@@ -55,7 +55,11 @@ class CandidatosController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $varpropuesta=Propuesta::findOrfail($id);
+        // $varpropuesta = DB::table('messages')->where('idpropuesta',$id)->first();
+        return view('propuestas.show',compact('varpropuesta'));
+
     }
 
     /**
@@ -64,12 +68,11 @@ class CandidatosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($idcandidato)
+    public function edit($id)
     {
         
-        $varcandidato=Candidato::find($idcandidato);
-        return $varcandidato;
-        // return view('candidatos.edit',compact('varcandidato'));
+        $varcandidato=Candidato::findOrfail($id);
+        return view('candidatos.edit',compact('varcandidato'));
 
     }
 
@@ -86,6 +89,7 @@ class CandidatosController extends Controller
         
 
         //redireccionamos
+       
         return redirect()->route('inicios.index');
     }
 
@@ -97,6 +101,8 @@ class CandidatosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $varcandidato=Candidato::findOrfail($id)->delete();
+        //redireccionar
+        return redirect()->route('inicios.index');
     }
 }

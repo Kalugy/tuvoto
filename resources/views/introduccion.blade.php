@@ -1,4 +1,4 @@
-<!doctype html>
+
 @extends ('layout')
 
 @section('contenido')
@@ -14,11 +14,60 @@
 
 		<h1>¿Como funciona?</h1>
 		<p>es un cuestionario que se debe llenar de tal manera y tal otra ...</p>
-		<h1>Elecciones de</h1>
-		<p>esto se debe modificar con la base de dato</p>
-		<h1>Candidatos</h1>
-		<p>esto se debe modificar con la base de dato</p>
-</label></p>
+		<table witdh="100%"  >
+	<thead>
+	  <tr>
+
+	    <th>Elecciones de:</th>
+
+	   
+
+
+	  </tr>
+	</thead>
+	<tbody>
+	  	@foreach ($varinicio as $inicio)
+	  	<tr>
+			<td> 
+				{{-- <a href= "{{route('mensajes.show',$mensaje->id)}}"> --}}
+				{{$inicio->elecciones }}
+			{{-- </a> --}}
+			
+
+	  	</tr>
+
+	  	@endforeach
+	</tbody>
+	</table> 
+		
+
+		<table witdh="100%"  >
+	<thead>
+	  <tr>
+
+	    <th>Candidatos</th>
+
+	    
+
+
+	  </tr>
+	</thead>
+	<tbody>
+	  	@foreach ($varcandidato as $can)
+	  	<tr>
+			<td> 
+				{{-- <a href= "{{route('mensajes.show',$mensaje->id)}}"> --}}
+				{{$can->candidato }}
+			{{-- </a> --}}
+			</td>
+			
+
+	  	</tr>
+
+	  	@endforeach
+	</tbody>
+	</table> 	 
+		
 
 <input type=submit value="Empieza ahora">
 

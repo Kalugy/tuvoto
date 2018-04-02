@@ -15,7 +15,7 @@
 
 
 
-Route::get('/',['as'=>'introduccion', 'uses'=>'PagesControler@introduccion']);
+Route::get('/',['as'=>'introduccion', 'uses'=>'introduccionController@introduccion']);
 
 // Route::get('saludos/{nombre?}',['as'=>'saludos', 'uses'=>'PagesControler@salud'])->where('nombre',"[A-Za-z]+") ;
 

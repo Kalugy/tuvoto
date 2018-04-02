@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Inicio;
-use App\Candidato;
-use App\Propuesta;
-
-class IniciosController extends Controller
+class PropuestasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +13,7 @@ class IniciosController extends Controller
      */
     public function index()
     {
-        $varinicio = Inicio::all();
-
-        $varcandidato = Candidato::all();
-        
-
-        $propuestas = Propuesta::all();
-
-        return view('inicios.index',compact('varinicio','varcandidato','propuestas'));
+        //
     }
 
     /**
@@ -34,7 +23,7 @@ class IniciosController extends Controller
      */
     public function create()
     {
-        return view('inicios.create');
+        //
     }
 
     /**
@@ -45,11 +34,7 @@ class IniciosController extends Controller
      */
     public function store(Request $request)
     {
-        Inicio::create($request->all());
-
-        //direccionar
-        return redirect()->route('inicios.index')->with('info','hemos recibido el mensaje');
-        
+        //
     }
 
     /**
@@ -71,8 +56,7 @@ class IniciosController extends Controller
      */
     public function edit($id)
     {
-        $varinicio=Inicio::findOrfail($id);
-        return view('inicios.edit',compact('varinicio'));
+        //
     }
 
     /**
@@ -84,11 +68,7 @@ class IniciosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $varinicio=Inicio::findOrfail($id)->update($request->all());
-        
-
-        //redireccionamos
-        return redirect()->route('inicios.index');
+        //
     }
 
     /**
@@ -99,8 +79,6 @@ class IniciosController extends Controller
      */
     public function destroy($id)
     {
-        $varinicio=Inicio::findOrfail($id)->delete();
-        //redireccionar
-        return redirect()->route('inicios.index');
+        //
     }
 }

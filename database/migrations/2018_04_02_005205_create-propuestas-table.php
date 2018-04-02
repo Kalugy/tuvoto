@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIniciosTable extends Migration
+class CreatePropuestasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateIniciosTable extends Migration
      */
     public function up()
     {
-        Schema::create('inicios', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('elecciones');//20 mil caracteres y strin 200
+        Schema::create('propuestas', function (Blueprint $table) {
+            $table->increments('idpropuesta');
+            $table->string('descripcionpropuesta');
+            $table->integer('idcampos');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateIniciosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inicios');
+        Schema::dropIfExists('propuestas');
     }
 }

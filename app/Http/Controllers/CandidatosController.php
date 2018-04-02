@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Candidato;
 
 use Illuminate\Http\Request;
 
-use App\Inicio;
-use App\Candidato;
-use App\Propuesta;
 
-class IniciosController extends Controller
+
+
+class CandidatosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +17,7 @@ class IniciosController extends Controller
      */
     public function index()
     {
-        $varinicio = Inicio::all();
-
-        $varcandidato = Candidato::all();
-        
-
-        $propuestas = Propuesta::all();
-
-        return view('inicios.index',compact('varinicio','varcandidato','propuestas'));
+        //
     }
 
     /**
@@ -34,7 +27,7 @@ class IniciosController extends Controller
      */
     public function create()
     {
-        return view('inicios.create');
+        return view('candidatos.create');
     }
 
     /**
@@ -45,11 +38,13 @@ class IniciosController extends Controller
      */
     public function store(Request $request)
     {
-        Inicio::create($request->all());
+        Candidato::create($request->all());
+
 
         //direccionar
-        return redirect()->route('inicios.index')->with('info','hemos recibido el mensaje');
+        return redirect()->route('inicios.index')->with('info','hemos recibido el candidato');
         
+        // return $request->all();
     }
 
     /**
@@ -69,10 +64,13 @@ class IniciosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idcandidato)
     {
-        $varinicio=Inicio::findOrfail($id);
-        return view('inicios.edit',compact('varinicio'));
+        
+        $varcandidato=Candidato::find($idcandidato);
+        return $varcandidato;
+        // return view('candidatos.edit',compact('varcandidato'));
+
     }
 
     /**
@@ -84,7 +82,7 @@ class IniciosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $varinicio=Inicio::findOrfail($id)->update($request->all());
+        $varcandidato=Candidato::findOrfail($id)->update($request->all());
         
 
         //redireccionamos
@@ -99,8 +97,6 @@ class IniciosController extends Controller
      */
     public function destroy($id)
     {
-        $varinicio=Inicio::findOrfail($id)->delete();
-        //redireccionar
-        return redirect()->route('inicios.index');
+        //
     }
 }

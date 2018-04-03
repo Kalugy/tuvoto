@@ -56,9 +56,7 @@ class CandidatosController extends Controller
     public function show($id)
     {
 
-        $varpropuesta=Propuesta::findOrfail($id);
-        // $varpropuesta = DB::table('messages')->where('idpropuesta',$id)->first();
-        return view('propuestas.show',compact('varpropuesta'));
+        
 
     }
 

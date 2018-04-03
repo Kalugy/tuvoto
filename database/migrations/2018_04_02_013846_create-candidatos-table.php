@@ -19,7 +19,7 @@ class CreateCandidatosTable extends Migration
             $table->string('partido');
             $table->string('perfil');
             $table->string('nombreprograma');
-            $table->integer('idpropuesta')->unique();
+            $table->integer('propuesta_id')->unique();
             $table->timestamps();
         });
     }

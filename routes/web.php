@@ -12,8 +12,10 @@
 });
 
 
-
-
+//ver todas las propuestas
+Route::get('propu',function(){
+	return \App\Propuesta::with('candidato')->get();
+});
 
 Route::get('/',['as'=>'introduccion', 'uses'=>'introduccionController@introduccion']);
 
@@ -24,7 +26,7 @@ Route::resource('mensajes','MessagesController');
 
 Route::resource('inicios','IniciosController');
 Route::resource('candidatos','CandidatosController');
-
+Route::resource('propuestas','PropuestasController');
 
 Route::get('login','Auth\LoginController@showLoginForm') -> name('login');;
 Route::post('login','Auth\LoginController@login');

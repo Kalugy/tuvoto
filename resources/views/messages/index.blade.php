@@ -3,7 +3,7 @@
 @section('contenido')
 
 	<h1>Todos los mensajes</h1>
-	$messages
+	{{-- $messages --}}
 	<table witdh="100%" border="1" >
 	<thead>
 	  <tr>

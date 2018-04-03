@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Propuesta;
 use Illuminate\Http\Request;
 
 class PropuestasController extends Controller
@@ -45,7 +45,15 @@ class PropuestasController extends Controller
      */
     public function show($id)
     {
-        //
+        // $varpropuesta=Propuesta::findOrfail($id);
+        // $varpropuesta = DB::table('messages')->where('idpropuesta',$id)->first();
+        // return $id;
+        $varpropuesta=$id;
+        return view('propuestas.show',compact('varpropuesta'));
+       
+
+
+
     }
 
     /**

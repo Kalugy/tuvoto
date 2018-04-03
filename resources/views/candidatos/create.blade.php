@@ -29,9 +29,9 @@
 		<input type="text" name="nombreprograma">
 	</label></p>
 
-	<p><label for="idpropuesta">
+	<p><label for="propuesta_id">
 		idenfica las propuesta
-		<input type="text" name="idpropuesta">
+		<input type="text" name="propuesta_id">
 	</label></p>
 		
 	

@@ -73,8 +73,10 @@
 			<td> {{$can->perfil }}</td>
 			<td> {{$can->nombreprograma }}</td>
 			<td>
-				<a href= "{{route('candidatos.show',$can->idpropuesta)}}">
-				{{$can->idpropuesta }}
+				<a href= "{{route('propuestas.show',$can->propuesta_id)}}">
+
+				 {{$can->propuesta_id }}
+				{{-- {{$can-> propu() }} --}}
 			</a>
 			 </td>
 			

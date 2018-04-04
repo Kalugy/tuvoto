@@ -2,7 +2,7 @@
 
 @section('contenido')
 
-	<h1>Muestra inicio candidato y propuestas</h1>
+	<h1>Bienvenido</h1>
 	
 	<a href= "{{ route('inicios.create') }}">CREAR INICIO (añadir)</a>
 	
@@ -99,5 +99,58 @@
 	</tbody>
 	</table> 	 
 
+
+	<a href= "{{ route('propuestas.create') }}">CREAR propuesta (añadir)</a>
+	<table witdh="100%" border="1" >
+	<thead>
+	  <tr>
+
+	    <th>Propuestaid</th>
+
+	    
+	    <th>Propuestas</th>
+	    <th>Accion</th>
+
+
+	  </tr>
+	</thead>
+	<tbody>
+	  	{{-- @foreach ($varcandidato as $can) --}}
+	  	@foreach ($varpropuesta as $propuesta)
+	  	<tr>
+			<td> 
+				{{-- <a href= "{{route('mensajes.show',$mensaje->id)}}"> --}}
+				{{-- {{$can->propuesta_id }} --}}
+				{{$propuesta->id }}
+				{{$propuesta->key }}
+
+			{{-- </a> --}}
+			</td>
+		
+			<td>
+			{{-- {{$can-> propu }}	 --}}
+			
+			{{$propuesta->descripcionpropuesta }}
+			 </td>
+			
+
+			<td>
+				
+				<a href="{{ route('propuestas.edit',$propuesta->id)}}" >Editar</a>
+				
+				<form style="display:inline" method="POST" action="{{route('propuestas.destroy',$propuesta->id)}}">
+					{!!csrf_field()!!}
+					{!!method_field('DELETE')!!}
+					<button type="submit">Eliminar</button>
+					
+
+				</form>
+			</td>
+
+	  	</tr>
+		@endforeach 
+	  	{{-- @endforeach --}}
+	</tbody>
+	</table> 	 
 
 @stop	

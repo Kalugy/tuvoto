@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Propuesta extends Model
 {
-    
+    protected $fillable=['key','descripcionpropuesta'];
 	// protected $primaryKey = 'idpropuesta';
     /**
      * Get the candidato that owns propuesta.

@@ -19,8 +19,11 @@ class Candidato extends Model
     // }
 
     public function propu(){
+    	// return Propuesta::where('key',$this->propuesta_id)->get();
 
-    	return Propuesta::where('key',$this->propuesta_id)->first()->descripcionpropuesta;
+    	return $this-> hasMany(Propuesta::class, 'key','propuesta_id');
+    	// $readings = Reading::with('')->get();
+    	// return Propuesta::where('key',$this->propuesta_id)->get();
     	// return $this->belongsTo('App\Propuesta');
     // 	return $this->belongsTo('App\Propuesta')->withDefault(function ($user) {
     //     $user->name = 'Guest Author';

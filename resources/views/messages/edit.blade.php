@@ -25,4 +25,61 @@
 </form>
 
 
+<table witdh="100%" border="1" >
+	<thead>
+	  <tr>
+
+	    <th>Propuestaid</th>
+
+	    
+	    <th>Propuestas</th>
+	    <th>Accion</th>
+
+
+	  </tr>
+	</thead>
+	<tbody>
+	  	@foreach ($varcandidato as $can)
+	  	<tr>
+			<td> 
+				{{-- <a href= "{{route('mensajes.show',$mensaje->id)}}"> --}}
+				{{$can->propuesta_id }}
+			{{-- </a> --}}
+			</td>
+		
+			<td>
+			{{$can-> propu }}	
+			@foreach ($ca as $can)
+				@if(propu()==='descripcionpropuesta'){
+					$can->;
+				}
+					else 'sinpropuestas';
+				}}
+
+				@endif
+			@endforeach	
+			
+			 </td>
+			
+
+			<td>
+				
+				<a href="{{ route('propuestas.edit',$can->id)}}" >Editar</a>
+				{{-- <form style="display:inline" method="POST" action="{{route('candidatos.destroy',$can->id)}}">
+					{!!csrf_field()!!}
+					{!!method_field('DELETE')!!}
+					<button type="submit">Eliminar</button>
+					
+
+				</form> --}}
+			</td>
+
+	  	</tr>
+
+	  	@endforeach
+	</tbody>
+	</table> 	 
+
+
+
 @stop

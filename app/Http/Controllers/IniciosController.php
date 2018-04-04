@@ -22,11 +22,11 @@ class IniciosController extends Controller
         $varcandidato = Candidato::all();
         
 
-        $propuestas = Propuesta::all();
+        $varpropuesta = Propuesta::all();
         // View::share('varinicio');
         // return view('introduccion',compact('varinicio'));
 
-        return view('inicios.index',compact('varinicio','varcandidato','propuestas'));
+        return view('inicios.index',compact('varinicio','varcandidato','varpropuesta'));
 
     }
 

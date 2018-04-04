@@ -23,7 +23,7 @@ class PropuestasController extends Controller
      */
     public function create()
     {
-        //
+        return view('propuestas.create');
     }
 
     /**
@@ -34,7 +34,11 @@ class PropuestasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        Propuesta::create($request->all());
+
+        //direccionar
+        return redirect()->route('inicios.index')->with('info','hemos recibido el mensaje');
     }
 
     /**
@@ -64,7 +68,8 @@ class PropuestasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $varpropuesta=Propuesta::findOrfail($id);
+        return view('propuestas.edit',compact('varpropuesta'));
     }
 
     /**
@@ -76,7 +81,12 @@ class PropuestasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $varpropuesta=Propuesta::findOrfail($id)->update($request->all());
+        
+        //return Redirect()->route('introduccion', $varinicio);
+        // return view('introduccion')->with('varinicio',$varinicio);
+        //redireccionamos
+        return redirect()->route('inicios.index');
     }
 
     /**
@@ -87,6 +97,8 @@ class PropuestasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $varpropuesta=Propuesta::findOrfail($id)->delete();
+        //redireccionar
+        return redirect()->route('inicios.index');
     }
 }

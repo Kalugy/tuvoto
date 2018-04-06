@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <title>Introduccion</title>
+    <title>Tuvoto</title>
 
     <link rel="stylesheet" type="text/css" href="/css/app.css">
 
@@ -12,34 +12,42 @@
     <!-- Bootstrap CSS -->
     {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
 
+    
   </head>
   <body>
+
     <!--<h1> {{ request()->is('/')? 'estas en home':'no lo estas' }} </h1>-->
         <?php function activemenu($url){
 
             return request()->is($url)? 'active':'' ;
         } ?>
 
-        <ul class="nav justify-content-end">
-          <li class="nav-item">
-
-
-            @if(auth()->check())
-                    <a class="nav-link active" href= "\logout">Cerrar sesion de {{auth()->user()->name }}</a>
-                    {{-- <a class="{{ activemenu('mensajes') }}" href= "{{ route('mensajes.index') }}">Mensaje</a> --}}
-                    
-            @endif
-            @if(auth()->guest())
-                        <a class="nav-link active" href= "{{ "/login" }}">Login</a>
-            @endif
-
-
-          </li>
-          <li class="nav-item">
-
-        </ul>
-
        
+        <nav class="navbar navbar-light bg-secondary">
+          <div class="container-fluid">
+          
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+         
+
+              @if(auth()->check())
+                      <a class="nav-link active" href= "\logout">Cerrar sesion de <i class="glyphicon glyphicon-user">{{auth()->user()->name }}</a>
+                      {{-- <a class="{{ activemenu('mensajes') }}" href= "{{ route('mensajes.index') }}">Mensaje</a> --}}
+                      
+              @endif
+              @if(auth()->guest())
+                           
+                          <a class="nav-link active text-white" href= "{{ "/login" }}">Login</a>
+                          
+              @endif
+
+
+            </li>
+            <li class="nav-item">
+
+          </ul>
+          </div>
+        </nav>
          {{-- <a class="{{ activemenu('mensajes/create') }}" href= "{{ route('mensajes.create') }}">Contacto</a> --}}
         <div class="container">
         
@@ -48,9 +56,9 @@
 
 
         
-
-        <footer>Derechos reservados{{date('Y')}}</footer>
-
+        <blockquote class="blockquote text-center">
+        <footer><br><br><br><span style=" font-style: italic;">Derechos reservados{{date('Y')}}</span></br></br></br></footer>
+        </blockquote>
         </div>
 
 

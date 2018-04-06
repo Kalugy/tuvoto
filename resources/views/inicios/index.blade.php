@@ -2,9 +2,10 @@
 
 @section('contenido')
 
-	<h1>Bienvenido</h1>
+	<h1>Administrador</h1>
+	<h2>Introducción</h2>
 	
-	<a href= "{{ route('inicios.create') }}">CREAR INICIO (añadir)</a>
+	<a href= "{{ route('inicios.create') }}">AGREGAR INICIO</a>
 	
 	
 	<table witdh="100%" border="1" >
@@ -45,7 +46,8 @@
 	
 	
 
-	<a href= "{{ route('candidatos.create') }}">CREAR candidato (añadir)</a>
+	<a href= "{{ route('candidatos.create') }}">AGREGAR CANDIDATO</a>
+	
 	<table witdh="100%" border="1" >
 	<thead>
 	  <tr>
@@ -100,7 +102,7 @@
 	</table> 	 
 
 
-	<a href= "{{ route('propuestas.create') }}">CREAR propuesta (añadir)</a>
+	<a href= "{{ route('propuestas.create') }}">AGREGAR PROPUESTA</a>
 	<table witdh="100%" border="1" >
 	<thead>
 	  <tr>

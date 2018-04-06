@@ -48,12 +48,14 @@
                     <a class="{{ activemenu('mensajes') }}" href= "{{ route('mensajes.index') }}">Mensaje</a>
                 @endif
                 @if(auth()->guest())
+
                     <a class="{{ activemenu('login') }}" href= "{{ "/login" }}">Login</a>
                 @endif
     		</nav>
     	</header>	
 
         @yield('contenido')
+       
         <footer>Derechos reservados{{date('Y')}}</footer>
 
 	</body>

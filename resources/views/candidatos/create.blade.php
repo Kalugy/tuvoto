@@ -16,10 +16,13 @@
 		Candidato
 		<input type="text" name="candidato">
 	</label></p>
+	
+	
 	<p><label for="partido">
 		partido
 		<input type="text" name="partido">
 	</label></p>
+
 	<p><label for="perfil">
 		perfil
 		<input type="text" name="perfil">
@@ -34,7 +37,6 @@
 		<input type="text" name="propuesta_id">
 	</label></p>
 		
-	
 
 	<input type=submit value=Enviar>
 </form>

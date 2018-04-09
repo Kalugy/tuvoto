@@ -1,8 +1,13 @@
 @extends ('layout')
 
 @section('contenido')
-<h1>Añadir una nueva propuesta</h1>
-<h1>Llena los datos</h1>
+
+<br><div class="p-2 mb-2 bg-info text-white">
+	<h1>Nueva propuesta </h1>
+	</div>
+</br>
+<h3 class="text-secondary">Ingresa los datos</h3>
+<br></br>
 
 @if(session()->has('info'))
 	<h3>{{session('info')}}</h3>
@@ -11,18 +16,21 @@
 <form method="POST" action="{{ route('propuestas.store') }}">
 	<input type="hidden" name="_token" value="{{ Session::token() }}">
 	
-	<p><label for="key">
-		idpropuesta
-		<input type="text" name="key">
-	</label></p>
+	<div class="form-group row">
+	<label for="key" class="col-sm-1 col-form-label">idpropuesta</label>
+		<div class="col-sm-5">
+		<input type="text" class="form-control" name="key">
+		</div>
+	</div>
 
-
-	<p><label for="descripcionpropuesta">
-		Propuesta
-		<textarea name="descripcionpropuesta"></textarea> 
-	</label></p>
-
-	<input type=submit value=Enviar>
+	<div class="form-group">
+	<label for="descripcionpropuesta">Propuesta</label>
+		<textarea class="form-control" name="descripcionpropuesta" rows="2"></textarea> 
+	</div>
+	
+	<br>
+	<input type=submit class="btn btn-dark" value=Enviar>
+	</br>
 </form>
 @endif
 @stop

@@ -1,38 +1,55 @@
 @extends ('layout')
 
 @section('contenido')
-<h1>Editar candidato</h1>
+<br><div class="p-2 mb-2 bg-info text-white">
+	<h1>Editar candidato </h1>
+	</div>
+</br>
 
 <form method="POST" action="{{ route('candidatos.update',$varcandidato->id) }}">
 	{!!method_field('PUT') !!}
 	<input type="hidden" name="_token" value="{{ Session::token() }}">
 
 	
-	<p><label for="candidato">
-		Candidato
-		<input type="text" name="candidato" value="{{$varcandidato->candidato}}">
-	</label></p>
-	<p><label for="partido">
-		partido
-		<input type="text" name="partido" value="{{$varcandidato->partido}}">
-	</label></p>
-	<p><label for="perfil">
-		perfil
-		<input type="text" name="perfil" value="{{$varcandidato->perfil}}">
-	</label></p>
-	<p><label for="nombreprograma">
-		nombredelprograma
-		<input type="text" name="nombreprograma" value="{{$varcandidato->nombreprograma}}">
-	</label></p>
-
-	<p><label for="propuesta_id">
-		idenfica las propuesta
-		<input type="text" name="propuesta_id" value="{{$varcandidato->propuesta_id}}">
-	</label></p>
-		
+	<div class="form-group row">
+	<label for="candidato" class="col-sm-2 col-form-label">Candidato</label>
+		<div class="col-sm-5">
+		<input type="text" class="form-control" name="candidato" value="{{$varcandidato->candidato}}">
+		</div>
+	</div>
 	
 
-	<input type=submit value=Enviar>
+	<div class="form-group row">
+	<label for="partido" class="col-sm-2 col-form-label">Partido</label>
+		<div class="col-sm-5">
+		<input type="text" class="form-control" name="partido" value="{{$varcandidato->partido}}">
+		</div>
+	</div>
+
+	<div class="form-group row">
+	<label for="perfil" class="col-sm-2 col-form-label">Perfil</label>
+		<div class="col-sm-5">
+		<input type="text" class="form-control" name="perfil" value="{{$varcandidato->perfil}}">
+		</div>
+	</div>
+
+	<div class="form-group row">
+	<label for="nombreprograma" class="col-sm-2 col-form-label">Nombre del programa</label>
+		<div class="col-sm-5">
+		<input type="text" class="form-control" name="nombreprograma" value="{{$varcandidato->nombreprograma}}">
+		</div>
+	</div>
+
+	<div class="form-group row">
+	<label for="propuesta_id" class="col-sm-2 col-form-label">Identifica la propuesta</label>
+		<div class="col-sm-5">
+		<input type="text" class="form-control" name="propuesta_id" value="{{$varcandidato->propuesta_id}}">
+		</div>
+	</div>
+		
+	
+	<br> </br>
+	<input type=submit class="btn btn-dark" value=Enviar>
 </form>
 
 @stop

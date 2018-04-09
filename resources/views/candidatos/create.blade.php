@@ -1,7 +1,13 @@
 @extends ('layout')
 
 @section('contenido')
-<h1>Añadir un nuevo candidato </h1>
+
+<br><div class="p-2 mb-2 bg-info text-white">
+	<h1>Nuevo candidato </h1>
+	</div>
+</br>
+<h3 class="text-secondary">Ingresa los datos</h3>
+<br></br>
 
 
 @if(session()->has('info'))
@@ -9,36 +15,45 @@
 @else
 
 <form method="POST" action="{{ route('candidatos.store') }}">
-	<input type="hidden" name="_token" value="{{ Session::token() }}">
+	<input type="hidden" readonly class="form-control-plaintext" name="_token" value="{{ Session::token() }}">
 
+	<div class="form-group row">
+	<label for="candidato" class="col-sm-2 col-form-label">Candidato</label>
+		<div class="col-sm-5">
+		<input type="text" class="form-control" name="candidato">
+		</div>
+	</div>
 	
-	<p><label for="candidato">
-		Candidato
-		<input type="text" name="candidato">
-	</label></p>
-	
-	
-	<p><label for="partido">
-		partido
-		<input type="text" name="partido">
-	</label></p>
+	<div class="form-group row">
+	<label for="partido" class="col-sm-2 col-form-label">Partido</label>
+		<div class="col-sm-5">
+		<input type="text"  class="form-control" name="partido">
+		</div>
+	</div>
 
-	<p><label for="perfil">
-		perfil
-		<input type="text" name="perfil">
-	</label></p>
-	<p><label for="nombreprograma">
-		nombredelprograma
-		<input type="text" name="nombreprograma">
-	</label></p>
+	<div class="form-group row">
+	<label for="perfil" class="col-sm-2 col-form-label">Perfil</label>
+		<div class="col-sm-5">
+		<input type="text"  class="form-control" name="perfil">
+		</div>
+	</div>
 
-	<p><label for="propuesta_id">
-		idenfica las propuesta
-		<input type="text" name="propuesta_id">
-	</label></p>
+	<div class="form-group row">
+	<label for="nombreprograma" class="col-sm-2 col-form-label">Nombre del programa</label>
+		<div class="col-sm-5">
+		<input type="text"  class="form-control" name="nombreprograma">
+		</div>
+	</div>
+
+	<div class="form-group row">
+	<label for="propuesta_id" class="col-sm-2 col-form-label">Identifica la propuesta</label>
+		<div class="col-sm-5">
+		<input type="text" class="form-control" name="propuesta_id">
+		</div>
+	</div>
 		
-
-	<input type=submit value=Enviar>
+	<br> </br>
+	<input type=submit class="btn btn-dark" value=Enviar>
 </form>
 @endif
 @stop

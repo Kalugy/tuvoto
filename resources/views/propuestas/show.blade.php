@@ -8,7 +8,6 @@
 	<thead>
 	  <tr>
 
-	   
 
 	    <th>idpropuestas</th>
 

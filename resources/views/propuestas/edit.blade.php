@@ -1,27 +1,35 @@
 @extends ('layout')
 
 @section('contenido')
-<h1>Editar propuesta </h1>
-<h1>Llena los datos</h1>
+<br><div class="p-2 mb-2 bg-info text-white">
+	<h1>Editar propuesta </h1>
+	</div>
+</br>
+<h3 class="text-secondary">Ingresa los datos</h3>
+<br></br>
 
 
 
 <form method="POST" action="{{ route('propuestas.update',$varpropuesta->id) }}">
 	{!!method_field('PUT') !!}
 	<input type="hidden" name="_token" value="{{ Session::token() }}">
-	<p><label for="key">
-		idpropuesta
-		<input type="text" name="key" value="{{$varpropuesta->key}}">
-	</label></p>
+
+	<div class="form-group row">
+	<label for="key" class="col-sm-1 col-form-label">idpropuesta</label>
+		<div class="col-sm-5">
+		<input type="text" class="form-control" name="key" value="{{$varpropuesta->key}}">
+		</div>
+	</div>
 
 
-	<p><label for="descripcionpropuesta">
-		Propuesta
-		<textarea name="descripcionpropuesta">{{$varpropuesta->descripcionpropuesta}}</textarea>  
-	</label></p>
+	<div class="form-group">
+	<label for="descripcionpropuesta">Propuesta</label>
+		<textarea class="form-control" name="descripcionpropuesta">{{$varpropuesta->descripcionpropuesta}}</textarea>  
+	</div>
 	
-
-	<input type=submit value=Enviar>
+	<br>
+	<input type=submit class="btn btn-dark" value=Enviar>
+	</br>
 </form>
 
 @stop

@@ -1,8 +1,14 @@
 @extends ('layout')
 
 @section('contenido')
-<h1>Añadir una nueva eleccion </h1>
-<h1>Llena los datos</h1>
+
+<br><div class="p-2 mb-2 bg-info text-white">
+	<h1>Nueva eleccion </h1>
+	</div>
+</br>
+<h3 class="text-secondary">Ingresa los datos</h3>
+<br></br>
+
 
 @if(session()->has('info'))
 	<h3>{{session('info')}}</h3>
@@ -12,12 +18,15 @@
 	<input type="hidden" name="_token" value="{{ Session::token() }}">
 	
 		
-	<p><label for="elecciones">
-		Elecciones
-		<textarea name="elecciones"></textarea> 
-	</label></p>
+	<div class="form-group">	
+	<label for="elecciones">Tipo de elecciones </label> 
+	<textarea class="form-control" name="elecciones" rows="2"></textarea>
+	</div>
 
-	<input type=submit value=Enviar>
+
+	<br>
+	<input type=submit class="btn btn-dark"  value=Enviar>
+	</br>
 </form>
 @endif
 @stop

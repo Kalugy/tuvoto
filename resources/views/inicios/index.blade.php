@@ -2,19 +2,22 @@
 
 @section('contenido')
 
-	<h1>Administrador</h1>
-	<h2>Introducción</h2>
+<br><div class="p-2 mb-2 bg-info text-white">
+	<h1>Administrador </h1>
+	</div>
+</br>
+	<h2><small class="text-muted"><strong>INICIO</strong></small></h2>
 	
-	<a href= "{{ route('inicios.create') }}">AGREGAR INICIO</a>
+	<a href= "{{ route('inicios.create') }}">Agregar inicio</a>
 	
 	
-	<table witdh="100%" border="1" >
+	<table witdh="100%" border="1" cellspacing="10" cellpadding="8">
 	<thead>
-	  <tr>
+	  <tr class=" table text-center table-dark">
 
-	    <th>Elecciones</th>
+	    <th>  Tipo de Elección</th>
 
-	    <th>Accion</th>
+	    <th>  Acción</th>
 
 
 	  </tr>
@@ -22,17 +25,17 @@
 	<tbody>
 	  	@foreach ($varinicio as $inicio)
 	  	<tr>
-			<td> 
+			<td scope="row"> 
 				{{-- <a href= "{{route('mensajes.show',$mensaje->id)}}"> --}}
 				{{$inicio->elecciones }}
 			{{-- </a> --}}
 			</td>
-			<td> <a href= "{{ route('inicios.edit',$inicio->id )}}">Editar</a>
+			<td align="center" scope="row"> <a href= "{{ route('inicios.edit',$inicio->id )}}">Editar</a>
 				
 			<form style="display:inline" method="POST" action="{{route('inicios.destroy',$inicio->id)}}">
 					{!!csrf_field()!!}
 					{!!method_field('DELETE')!!}
-					<button type="submit">Eliminar</button>
+					<br><button type="submit" class="btn btn-outline-primary btn-sm" >Eliminar</button></br>
 			</form>		
 			</td>
 
@@ -40,17 +43,19 @@
 	  	</tr>
 
 	  	@endforeach
+
+	
 	</tbody>
 	</table> 	  	
 	<br>
 	
 	
-
-	<a href= "{{ route('candidatos.create') }}">AGREGAR CANDIDATO</a>
+	<h2><small class="text-muted"><strong>CANDIDATO</strong></small></h2>
+	<a href= "{{ route('candidatos.create') }}">Agregar candidato</a>
 	
-	<table witdh="100%" border="1" >
+	<table witdh="100%" border="1" cellspacing="10" cellpadding="8" >
 	<thead>
-	  <tr>
+	  <tr class="table text-center table-dark">
 
 	    <th>Candidato</th>
 
@@ -63,6 +68,8 @@
 
 	  </tr>
 	</thead>
+
+
 	<tbody>
 	  	@foreach ($varcandidato as $can)
 	  	<tr>
@@ -83,13 +90,13 @@
 			 </td>
 			
 
-			<td>
+			<td align="center">
 				
 				<a href="{{ route('candidatos.edit',$can->id)}}" >Editar</a>
 				<form style="display:inline" method="POST" action="{{route('candidatos.destroy',$can->id)}}">
 					{!!csrf_field()!!}
 					{!!method_field('DELETE')!!}
-					<button type="submit">Eliminar</button>
+					<br><button type="submit" class="btn btn-outline-primary btn-sm">Eliminar</button></br>
 					
 
 				</form>
@@ -100,12 +107,13 @@
 	  	@endforeach
 	</tbody>
 	</table> 	 
+	<br></br>
+	<h2><small class="text-muted"><strong>PROPUESTAS</strong></small></h2>
+	<a href= "{{ route('propuestas.create') }}">Agregar propuestas</a>
 
-
-	<a href= "{{ route('propuestas.create') }}">AGREGAR PROPUESTA</a>
-	<table witdh="100%" border="1" >
+	<table witdh="100%" border="1" cellspacing="10" cellpadding="8">
 	<thead>
-	  <tr>
+	  <tr class="table text-center table-dark">
 
 	    <th>Propuestaid</th>
 
@@ -136,14 +144,14 @@
 			 </td>
 			
 
-			<td>
+			<td align="center">
 				
 				<a href="{{ route('propuestas.edit',$propuesta->id)}}" >Editar</a>
 				
 				<form style="display:inline" method="POST" action="{{route('propuestas.destroy',$propuesta->id)}}">
 					{!!csrf_field()!!}
 					{!!method_field('DELETE')!!}
-					<button type="submit">Eliminar</button>
+					<br><button type="submit" class="btn btn-outline-primary btn-sm">Eliminar</button></br>
 					
 
 				</form>

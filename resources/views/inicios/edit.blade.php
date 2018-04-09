@@ -1,19 +1,24 @@
 @extends ('layout')
 
 @section('contenido')
-<h1>Editar </h1>
+<br><div class="p-2 mb-2 bg-info text-white">
+	<h1>Editar Elecciones </h1>
+	</div>
+</br>
 
 <form method="POST" action="{{ route('inicios.update',$varinicio->id) }}">
 	{!!method_field('PUT') !!}
 	<input type="hidden" name="_token" value="{{ Session::token() }}">
 
 	{{-- {!!csrf_field() !!} --}}
-	<p><label for="elecciones">
-		Elecciones
-		<textarea name="elecciones">{{$varinicio->elecciones}}</textarea> 
-	</label></p>
+	<div class="form-group">	
+	<label for="elecciones">Tipo de elecciones </label> 
+		<textarea class="form-control" name="elecciones" rows="2">{{$varinicio->elecciones}}</textarea> 
+	</div>
 
-	<input type=submit value=Enviar>
+	<br>
+	<input type=submit class="btn btn-dark" value=Enviar>
+	</br>
 </form>
 
 

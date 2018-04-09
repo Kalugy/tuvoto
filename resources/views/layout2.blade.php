@@ -56,7 +56,7 @@
 
         @yield('contenido')
        
-        <footer>Derechos reservados{{date('Y')}}</footer>
+        <footer>Derechos reservados {{date('Y')}}</footer>
 
 	</body>
 </html>

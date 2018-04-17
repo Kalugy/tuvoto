@@ -49,17 +49,17 @@
           </div>
         </nav>
          {{-- <a class="{{ activemenu('mensajes/create') }}" href= "{{ route('mensajes.create') }}">Contacto</a> --}}
-        <div class="container">
+        <div class="container" style="background-color:   #CCCCFF" style="border: #CCCCCC">
         
 
         @yield('contenido')
 
-
+        </div>
         
         <blockquote class="blockquote text-center">
         <footer><br><br><br><span style=" font-style: italic;">Derechos reservados{{date('Y')}}</span></br></br></br></footer>
         </blockquote>
-        </div>
+        
 
 
 

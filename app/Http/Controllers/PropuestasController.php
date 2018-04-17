@@ -97,12 +97,13 @@ class PropuestasController extends Controller
      */
     public function edit($id)
     {
-        $varpropuesta=Propuesta::where('key',$id)->get();
+        $varpropuesta=Propuesta::where('key',$id)->first();
 
        
-        echo $varpropuesta->{key};
         
-        // return view('propuestas.edit',compact('varpropuesta'));
+
+        
+        return view('propuestas.edit',compact('varpropuesta'));
     }
 
     /**

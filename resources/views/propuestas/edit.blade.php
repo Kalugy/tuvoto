@@ -10,7 +10,7 @@
 
 
 
-<form method="POST" action="{{ route('propuestas.update',$varpropuesta->id) }}">
+<form method="POST" action="{{ route('propuestas.update',$varpropuesta->key) }}">
 	{!!method_field('PUT') !!}
 	<input type="hidden" name="_token" value="{{ Session::token() }}">
 
@@ -28,7 +28,7 @@
 	</div>
 	
 	<br>
-	<input type=submit class="btn btn-dark" value=Enviar>
+	<input type=submit class="btn btn-dark" value=Editar>
 	</br>
 </form>
 

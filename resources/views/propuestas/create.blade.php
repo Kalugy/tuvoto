@@ -16,12 +16,15 @@
 <form method="POST" action="{{ route('propuestas.store') }}">
 	<input type="hidden" name="_token" value="{{ Session::token() }}">
 	
-	<div class="form-group row">
-	<label for="key" class="col-sm-1 col-form-label">idpropuesta</label>
-		<div class="col-sm-5">
-		<input type="text" class="form-control" name="key">
-		</div>
+	<div class="form-group">
+	<label for="candidato">candidato</label>
+		<select name="candidato" class="form-control">
+			@foreach($candidatos as $candidato)
+				<option value="{{$candidato['id'] }}">{{$candidato['candidato'] }}</option>
+			@endforeach
+		</select>
 	</div>
+
 
 	<div class="form-group">
 	<label for="descripcionpropuesta">Propuesta</label>

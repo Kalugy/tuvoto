@@ -70,6 +70,8 @@ class CandidatosController extends Controller
     {
         
         $varcandidato=Candidato::findOrfail($id);
+        
+
         return view('candidatos.edit',compact('varcandidato'));
 
     }
@@ -100,7 +102,19 @@ class CandidatosController extends Controller
     public function destroy($id)
     {
         $varcandidato=Candidato::findOrfail($id)->delete();
-        //redireccionar
-        return redirect()->route('inicios.index');
+
+        
+        $varpropuesta=Propuesta::find($id);
+
+         // return redirect()->route('inicios.index');
+        
+        if(is_null($varpropuesta)){
+            return redirect()->route('inicios.index');
+        }
+        else{
+            $varpropuesta=Propuesta::findOrfail($id)->delete();
+            return redirect()->route('inicios.index');}
+      
+        
     }
 }

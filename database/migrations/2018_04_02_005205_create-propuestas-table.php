@@ -14,8 +14,8 @@ class CreatePropuestasTable extends Migration
     public function up()
     {
         Schema::create('propuestas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('key');
+            $table->increments('key');
+            $table->integer('id');
             $table->string('descripcionpropuesta')->nullable();
             $table->timestamps();
         });

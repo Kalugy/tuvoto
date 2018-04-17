@@ -14,12 +14,12 @@
 	{!!method_field('PUT') !!}
 	<input type="hidden" name="_token" value="{{ Session::token() }}">
 
-	<div class="form-group row">
+	{{-- <div class="form-group row">
 	<label for="key" class="col-sm-1 col-form-label">idpropuesta</label>
 		<div class="col-sm-5">
 		<input type="text" class="form-control" name="key" value="{{$varpropuesta->key}}">
 		</div>
-	</div>
+	</div> --}}
 
 
 	<div class="form-group">

@@ -13,7 +13,7 @@ class Propuesta extends Model
      */
     public function candidato()
     {
-        return $this->HasOne(Candidato::class);
+        return $this->belongsTo('Candidato','propuesta_id','key');
     }
 
     public function getpropuesta(){
@@ -25,6 +25,16 @@ class Propuesta extends Model
     // });
     
     }
+    public function getcandidato(){
+
+        return Candidato::where('propuesta_id',$this->id)->first()->candidato;
+        // return $this->belongsTo('App\Propuesta');
+    //  return $this->belongsTo('App\Propuesta')->withDefault(function ($user) {
+    //     $user->name = 'Guest Author';
+    // });
+    
+    }
+
 
 
 }

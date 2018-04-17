@@ -62,7 +62,6 @@
 	    <th>Partido</th>
 	    <th>Perfil</th>
 	    <th>programa</th>
-	    <th>Propuestas</th>
 	    <th>accion</th>
 
 
@@ -81,13 +80,18 @@
 			<td> {{$can->partido }}</td>
 			<td> {{$can->perfil }}</td>
 			<td> {{$can->nombreprograma }}</td>
-			<td>
-				<a href= "{{route('propuestas.show',$can->propuesta_id)}}">
+			
+				{{-- <a href= "{{route('propuestas.show',$can->propuesta_id)}}">
+				
+				@foreach ($varpropuesta as $propuesta)
+				@if()
+				 {{-- {{$can->propuesta_id }} --}}
+				 {{-- {{$can-> propu }}  --}} 
 
-				 {{$can->propuesta_id }}
-				{{-- {{$can-> propu() }} --}}
-			</a>
-			 </td>
+
+				
+
+			
 			
 
 			<td align="center">
@@ -103,19 +107,19 @@
 			</td>
 
 	  	</tr>
-
+		
 	  	@endforeach
 	</tbody>
 	</table> 	 
 	<br></br>
-	<h2><small class="text-muted"><strong>PROPUESTAS</strong></small></h2>
+	 <h2><small class="text-muted"><strong>PROPUESTAS</strong></small></h2>
 	<a href= "{{ route('propuestas.create') }}">Agregar propuestas</a>
 
 	<table witdh="100%" border="1" cellspacing="10" cellpadding="8">
 	<thead>
 	  <tr class="table text-center table-dark">
 
-	    <th>Propuestaid</th>
+	    <th>Propuestade</th>
 
 	    
 	    <th>Propuestas</th>
@@ -131,8 +135,7 @@
 			<td> 
 				{{-- <a href= "{{route('mensajes.show',$mensaje->id)}}"> --}}
 				{{-- {{$can->propuesta_id }} --}}
-				{{$propuesta->id }}
-				{{$propuesta->key }}
+				{{$propuesta-> getcandidato() }}
 
 			{{-- </a> --}}
 			</td>
@@ -146,9 +149,9 @@
 
 			<td align="center">
 				
-				<a href="{{ route('propuestas.edit',$propuesta->id)}}" >Editar</a>
+				<a href="{{ route('propuestas.edit',$propuesta->key)}}" >Editar</a>
 				
-				<form style="display:inline" method="POST" action="{{route('propuestas.destroy',$propuesta->id)}}">
+				<form style="display:inline" method="POST" action="{{route('propuestas.destroy',$propuesta->key)}}">
 					{!!csrf_field()!!}
 					{!!method_field('DELETE')!!}
 					<br><button type="submit" class="btn btn-outline-primary btn-sm">Eliminar</button></br>
@@ -156,11 +159,14 @@
 
 				</form>
 			</td>
-
-	  	</tr>
+		  </tr>		
+		
+			
+	  	
 		@endforeach 
 	  	{{-- @endforeach --}}
 	</tbody>
 	</table> 	 
+
 
 @stop	

@@ -14,7 +14,7 @@
       
 
     	<h1>Error pagina no encontrada</h1>
-        <a href="{{route('introduccion')}}">regresar</a>
-
+        <a href="{{route('inicios.index')}}">regresar</a>
+        
 	</body>
 </html>

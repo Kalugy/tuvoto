@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use DB;
+use Carbon\Carbon;
 use App\Propuesta;
+use App\Candidato;
 use Illuminate\Http\Request;
 
 class PropuestasController extends Controller
@@ -23,7 +26,9 @@ class PropuestasController extends Controller
      */
     public function create()
     {
-        return view('propuestas.create');
+        $candidatos= Candidato::all();
+        return view('propuestas.create', compact('candidatos'));
+
     }
 
     /**
@@ -35,10 +40,34 @@ class PropuestasController extends Controller
     public function store(Request $request)
     {
         
-        Propuesta::create($request->all());
+        $can=$request->get('candidato');
+        $Pro=$request->get('descripcionpropuesta'); 
+
+        Candidato::where('id', $can)->update(['propuesta_id' => $can]);
+   
+        $flight = new Propuesta;
+
+        $flight->id = $can;
+        $flight->descripcionpropuesta = $Pro;
+        $flight->save();
+
 
         //direccionar
-        return redirect()->route('inicios.index')->with('info','hemos recibido el mensaje');
+        return redirect()->route('inicios.index');
+
+        /*$varcan= \App\Candidato::get();
+        
+        //     \App\Candidato::findOrFail('key','propuesta_id')
+        
+        foreach ($varcan as $var) {
+            
+            if($request->key == $var->propuesta_id ){
+                Propuesta::create($request->all());
+                //direccionar
+                return redirect()->route('inicios.index');
+            }
+        }*/
+
     }
 
     /**
@@ -68,8 +97,12 @@ class PropuestasController extends Controller
      */
     public function edit($id)
     {
-        $varpropuesta=Propuesta::findOrfail($id);
-        return view('propuestas.edit',compact('varpropuesta'));
+        $varpropuesta=Propuesta::where('key',$id)->get();
+
+       
+        echo $varpropuesta->{key};
+        
+        // return view('propuestas.edit',compact('varpropuesta'));
     }
 
     /**
@@ -79,9 +112,17 @@ class PropuestasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $key)
     {
-        $varpropuesta=Propuesta::findOrfail($id)->update($request->all());
+        
+
+        Propuesta::where('key',$key)->update([
+            
+            "descripcionpropuesta"=> $request->input('descripcionpropuesta'),
+            "updated_at"=> Carbon::now(),
+        ]);
+
+        // $varpropuesta=Propuesta::where('key',$key)->update($request->all);
         
         //return Redirect()->route('introduccion', $varinicio);
         // return view('introduccion')->with('varinicio',$varinicio);
@@ -95,9 +136,11 @@ class PropuestasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($key)
     {
-        $varpropuesta=Propuesta::findOrfail($id)->delete();
+        
+        $varpropuesta=Propuesta::where('key',$key)->delete();
+       
         //redireccionar
         return redirect()->route('inicios.index');
     }

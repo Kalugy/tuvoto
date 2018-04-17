@@ -16,7 +16,7 @@
 	  </tr>
 	</thead>
 	<tbody>
-	  	@foreach($varpropuesta as $propuesta)
+	  	
 	  	<tr>
 			
 			
@@ -38,8 +38,7 @@
 
 
 	  	</tr>
-		@endforeach
-	  	
+		
 
 	</tbody>
 	</table>

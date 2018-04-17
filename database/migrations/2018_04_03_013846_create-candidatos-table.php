@@ -11,10 +11,10 @@ class CreateCandidatosTable extends Migration
      *
      * @return void
      */
+    // creacion de tabla candidatos con propuesta id por que al inicio no puede tener propuestas
     public function up()
     {
         Schema::create('candidatos', function (Blueprint $table) {
-
             $table->increments('id');
             $table->string('candidato');
             $table->string('partido');

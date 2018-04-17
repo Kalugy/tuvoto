@@ -10,7 +10,6 @@
 	{!!method_field('PUT') !!}
 	<input type="hidden" name="_token" value="{{ Session::token() }}">
 
-	
 	<div class="form-group row">
 	<label for="candidato" class="col-sm-2 col-form-label">Candidato</label>
 		<div class="col-sm-5">
@@ -18,7 +17,6 @@
 		</div>
 	</div>
 	
-
 	<div class="form-group row">
 	<label for="partido" class="col-sm-2 col-form-label">Partido</label>
 		<div class="col-sm-5">
@@ -40,16 +38,8 @@
 		</div>
 	</div>
 
-	{{-- <div class="form-group row">
-	<label for="propuesta_id" class="col-sm-2 col-form-label">Identifica la propuesta</label>
-		<div class="col-sm-5">
-		<input type="text" class="form-control" name="propuesta_id" value="{{$varcandidato->propuesta_id}}">
-		</div>
-	</div> --}}
-		
-	
 	<br> </br>
-	<input type=submit class="btn btn-dark" value=Enviar>
+	<input type=submit class="btn btn-dark" value=Editar>
 </form>
 
 @stop

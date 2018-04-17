@@ -6,11 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Propuesta extends Model
 {
-    protected $fillable=['key','descripcionpropuesta'];
+    // para prevenir inyeccion de datos por seguridad que solo reciba los siguientes datos
+    protected $fillable=['descripcionpropuesta'];
 	// protected $primaryKey = 'idpropuesta';
     /**
      * Get the candidato that owns propuesta.
      */
+
+    // funciones para recibir datos de otras tablas (toco con where por que el belong tiene un error)
     public function candidato()
     {
         return $this->belongsTo('Candidato','propuesta_id','key');

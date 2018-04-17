@@ -17,7 +17,8 @@ class Candidato extends Model
     // {
     //     return $this->hasOne('App\Propuesta');
     // }
-
+    
+    // para obtener una propuesta en especifico los de abajo son intentos que se podrian hacer
     public function propu(){
     	// return Propuesta::where('key',$this->propuesta_id)->get();
         // return $this->belongsTo('App\Propuesta','propuesta_id','key');
@@ -30,16 +31,7 @@ class Candidato extends Model
     // });
     
     }
-    public function getcandidato(){
-
-        return Candidato::where('id',$this->propuesta_id)->first()->candidato;
-        // return $this->belongsTo('App\Propuesta');
-    //  return $this->belongsTo('App\Propuesta')->withDefault(function ($user) {
-    //     $user->name = 'Guest Author';
-    // });
     
-    }
-
 
 
 }

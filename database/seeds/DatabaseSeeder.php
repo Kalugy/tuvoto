@@ -15,11 +15,12 @@ class DatabaseSeeder extends Seeder
     	$this->truncateTables([
             'users',
         ]);
-
+        //paracrearlosseeders de user
         $this->call(UserSeeder::class);
     }
 
-
+    // funcion para truncar las tablas cada vez que se cargue el php artisan migrate
+    // practicamente para volerlas a crear
     public function truncateTables(array $tables)
     {
         DB::statement('SET FOREIGN_KEY_CHECKS = 0;');

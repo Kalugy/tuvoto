@@ -1,3 +1,4 @@
+{{-- ventana de login --}}
 @extends ('layout')
 
 @section('contenido')

@@ -16,7 +16,7 @@ class PropuestasController extends Controller
      */
     public function index()
     {
-        //
+        //para mostrar la tabla peo todo lo hace inicios.index
     }
 
     /**
@@ -26,7 +26,9 @@ class PropuestasController extends Controller
      */
     public function create()
     {
+        // creamos
         $candidatos= Candidato::all();
+        // redireccionamos
         return view('propuestas.create', compact('candidatos'));
 
     }
@@ -39,34 +41,22 @@ class PropuestasController extends Controller
      */
     public function store(Request $request)
     {
-        
+        // que guarde el id en candidatos en su tabla
         $can=$request->get('candidato');
+        // miramos la propuesta que queremos guardar
         $Pro=$request->get('descripcionpropuesta'); 
-
+        // guardamos la propuesta del candidato "la llave foranea"
         Candidato::where('id', $can)->update(['propuesta_id' => $can]);
-   
+        
+        // esto es para guardar la prpuesta en la tabla propuesta con el id (llave foranea) y la propuesta
         $flight = new Propuesta;
-
         $flight->id = $can;
         $flight->descripcionpropuesta = $Pro;
         $flight->save();
-
+        // Nota: el save guarda los timestamps guarda ya actualiza el tiempo
 
         //direccionar
         return redirect()->route('inicios.index');
-
-        /*$varcan= \App\Candidato::get();
-        
-        //     \App\Candidato::findOrFail('key','propuesta_id')
-        
-        foreach ($varcan as $var) {
-            
-            if($request->key == $var->propuesta_id ){
-                Propuesta::create($request->all());
-                //direccionar
-                return redirect()->route('inicios.index');
-            }
-        }*/
 
     }
 
@@ -78,15 +68,10 @@ class PropuestasController extends Controller
      */
     public function show($id)
     {
-        // $varpropuesta=Propuesta::findOrfail($id);
-        // $varpropuesta = DB::table('messages')->where('idpropuesta',$id)->first();
-        // return $id;
+        // nunca se utiliza pero la coloque por si las moscas
         $varpropuesta=$id;
         return view('propuestas.show',compact('varpropuesta'));
        
-
-
-
     }
 
     /**
@@ -97,12 +82,9 @@ class PropuestasController extends Controller
      */
     public function edit($id)
     {
+        //buscamos el valor a editar
         $varpropuesta=Propuesta::where('key',$id)->first();
-
-       
-        
-
-        
+        //reireccionamos        
         return view('propuestas.edit',compact('varpropuesta'));
     }
 
@@ -116,17 +98,13 @@ class PropuestasController extends Controller
     public function update(Request $request, $key)
     {
         
-
+        // actualizamos con la key que nos llegue
         Propuesta::where('key',$key)->update([
             
             "descripcionpropuesta"=> $request->input('descripcionpropuesta'),
             "updated_at"=> Carbon::now(),
         ]);
 
-        // $varpropuesta=Propuesta::where('key',$key)->update($request->all);
-        
-        //return Redirect()->route('introduccion', $varinicio);
-        // return view('introduccion')->with('varinicio',$varinicio);
         //redireccionamos
         return redirect()->route('inicios.index');
     }
@@ -139,7 +117,7 @@ class PropuestasController extends Controller
      */
     public function destroy($key)
     {
-        
+        // donde vea la key borreme toda la columnda y sus datos sin respaldo
         $varpropuesta=Propuesta::where('key',$key)->delete();
        
         //redireccionar

@@ -68,10 +68,10 @@ class CandidatosController extends Controller
      */
     public function edit($id)
     {
-        
+        //miramos a ver si el valor de id esta en la tabla
         $varcandidato=Candidato::findOrfail($id);
         
-
+        // redireccionamos
         return view('candidatos.edit',compact('varcandidato'));
 
     }
@@ -85,11 +85,9 @@ class CandidatosController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // actuzalismo los datos en la tabla con el siguiente linea
         $varcandidato=Candidato::findOrfail($id)->update($request->all());
-        
-
         //redireccionamos
-       
         return redirect()->route('inicios.index');
     }
 
@@ -101,20 +99,18 @@ class CandidatosController extends Controller
      */
     public function destroy($id)
     {
+        // OJO si borra un candidato se borra TODAS sus propuestas 
         $varcandidato=Candidato::findOrfail($id)->delete();
-
-        
+        // mira si el candidato tiene propuesta para eliminar
+        // si se pone find or fail saca error cuando no hay datos en la tabla propuestas
         $varpropuesta=Propuesta::find($id);
 
-         // return redirect()->route('inicios.index');
-        
+        //si tiene propuestas borremelas si no redireccioneme a index
         if(is_null($varpropuesta)){
             return redirect()->route('inicios.index');
         }
         else{
             $varpropuesta=Propuesta::findOrfail($id)->delete();
             return redirect()->route('inicios.index');}
-      
-        
-    }
+        }
 }

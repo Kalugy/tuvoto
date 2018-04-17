@@ -6,14 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inicio extends Model
 {
+	// por seguridad
     protected $fillable=['elecciones'];
-
-    // public function propuestas(){
-
-    // 	$var=$this->belongsTo(Propuesta::class)
-    // 	return $var;
-    // }
-
-    
 
 }

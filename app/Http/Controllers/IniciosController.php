@@ -18,14 +18,9 @@ class IniciosController extends Controller
     public function index()
     {
         $varinicio = Inicio::all();
-
         $varcandidato = Candidato::all();
-        
-
         $varpropuesta = Propuesta::all();
-        // View::share('varinicio');
-        // return view('introduccion',compact('varinicio'));
-
+        // enviamos todos los datos para mostrar las tablas en inicios.index
         return view('inicios.index',compact('varinicio','varcandidato','varpropuesta'));
 
     }
@@ -37,6 +32,7 @@ class IniciosController extends Controller
      */
     public function create()
     {
+        // redireccionamos
         return view('inicios.create');
     }
 
@@ -73,7 +69,9 @@ class IniciosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
+        // el unico caso que pude utilizar findorfail por que la llave primaria era id
+        // en los otros casos no pude por que se llamaban diferentes
         $varinicio=Inicio::findOrfail($id);
         return view('inicios.edit',compact('varinicio'));
     }
@@ -87,10 +85,9 @@ class IniciosController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // find or fail encuentra el di en la tabla o me vota a la vista error
         $varinicio=Inicio::findOrfail($id)->update($request->all());
         
-        //return Redirect()->route('introduccion', $varinicio);
-        // return view('introduccion')->with('varinicio',$varinicio);
         //redireccionamos
         return redirect()->route('inicios.index');
         

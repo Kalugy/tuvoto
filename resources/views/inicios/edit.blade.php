@@ -17,7 +17,7 @@
 	</div>
 
 	<br>
-	<input type=submit class="btn btn-dark" value=Enviar>
+	<input type=submit class="btn btn-dark" value=Editar>
 	</br>
 </form>
 

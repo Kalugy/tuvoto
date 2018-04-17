@@ -25,6 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
+    // a donde enviarme cuando el usuario ingrese
     protected $redirectTo = '/inicios';
 
     /**

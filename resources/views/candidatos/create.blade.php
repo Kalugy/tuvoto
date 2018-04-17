@@ -1,3 +1,4 @@
+
 @extends ('layout')
 
 @section('contenido')
@@ -45,13 +46,6 @@
 		</div>
 	</div>
 
-	<hol name="nombreprograma"></hol>
-	{{-- <div class="form-group row">
-	<label for="propuesta_id" class="col-sm-2 col-form-label">Identifica la propuesta</label>
-		<div class="col-sm-5">
-		<input type="text" class="form-control" name="propuesta_id">
-		</div>
-	</div> --}}
 		
 	<br> </br>
 	<input type=submit class="btn btn-dark" value=Enviar>

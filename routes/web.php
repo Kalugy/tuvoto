@@ -27,7 +27,13 @@ Route::resource('candidatos','CandidatosController');
 Route::resource('propuestas','PropuestasController');
 
 //rutas para el login
-Route::get('login','Auth\LoginController@showLoginForm') -> name('login');;
+Route::get('login','Auth\LoginController@showLoginForm') -> name('login');
 Route::post('login','Auth\LoginController@login');
 //ruta para cuando se salga
 Route::get('logout','Auth\LoginController@logout');
+
+//ruta para mostrar propuestas
+Route::get('/selecciones', 'SeleccionesController@index'); 
+Route::post('/selecciones', 'SeleccionesController@index');
+route::get('/selecciones/{key}', 'SeleccionesController@show')->where(['key' => '[0-9]+']);
+route::post('/selecciones/{key}', 'SeleccionesController@show')->where(['key' => '[0-9]+']);

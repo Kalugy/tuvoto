@@ -99,7 +99,11 @@
 
 <blockquote class="blockquote text-center">
 <br><br>
-<input class="btn btn-primary" type="button" value="Empieza ahora">
+<form method="POST" action="{{url('selecciones/1')}}">
+{!! csrf_field() !!}
+
+<button type:"submit">Empieza ahora</button>
+</form>
 </br></br>
 </blockquote>
 

@@ -17,6 +17,8 @@ class PropuestasController extends Controller
     public function index()
     {
         //para mostrar la tabla peo todo lo hace inicios.index
+        $varpropuesta = Propuesta::all();
+        return view('selecciones.index',compact('varpropuesta'));
     }
 
     /**
@@ -66,11 +68,14 @@ class PropuestasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($key)
     {
         // nunca se utiliza pero la coloque por si las moscas
-        $varpropuesta=$id;
-        return view('propuestas.show',compact('varpropuesta'));
+        $varpropuesta=Propuesta::find($key);
+        if(!is_null($varpropuesta))
+            return view('selecciones.show',compact('varpropuesta'));
+        else
+            return view ('errors.404');
        
     }
 

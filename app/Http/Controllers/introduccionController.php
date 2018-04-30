@@ -15,4 +15,6 @@ class introduccionController extends Controller
 		return view('introduccion',compact('varinicio','varcandidato'));
 
 	}
+	
+	
 }

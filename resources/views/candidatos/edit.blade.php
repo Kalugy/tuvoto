@@ -1,6 +1,9 @@
 @extends ('layout')
 
 @section('contenido')
+
+
+<div class="container" style="background-color: #eee; padding: 30px 10px 30px 10px ;" > 
 <br><div class="p-2 mb-2 bg-info text-white">
 	<h1>Editar candidato </h1>
 	</div>
@@ -41,5 +44,5 @@
 	<br> </br>
 	<input type=submit class="btn btn-dark" value=Editar>
 </form>
-
+</div>
 @stop

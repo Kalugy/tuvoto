@@ -1,8 +1,12 @@
 @extends ('layout')
 
+
 @section('contenido')
+
+
+<div class="container" style="background-color: #eee; padding: 30px 10px 30px 10px ;" > 
 <br><div class="p-2 mb-2 bg-info text-white">
-	<h1>Editar propuesta </h1>
+	<h1>Editar propuestaaaa </h1>
 	</div>
 </br>
 <h3 class="text-secondary">Ingresa los datos</h3>
@@ -32,4 +36,6 @@
 	</br>
 </form>
 
+
+</div>
 @stop

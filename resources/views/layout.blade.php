@@ -19,18 +19,22 @@
 
     <style type="text/css">
     body{
-      background-color: #E8E8EB; /* La página de fondo será negra */
+      /*background-color: black;*/
+      /*background-image: url('/images/Poly.png';);*/
+       /* La página de fondo será negra */
       /* Margin bottom by footer height */
         /*margin: 0;
         margin-bottom: 40px;*/
       
     }  
     .body{
-      background-color: #E8E8EB; /* La página de fondo será negra */
+      background-color: black; 
+
+      background-image: url('/images/Poly.png');
       /* Margin bottom by footer height */
         /*margin: 0;
         margin-bottom: 40px;*/
-      
+      /*background-image: url('/images/Poly.png';);*/
     }  
     /*html {
     min-height: 100%;
@@ -39,16 +43,17 @@
 
     #fondoprincipal{
 
-      margin-top: 30px;
+      margin-top: 95px;
       border-width: 50px; 
       margin-bottom: 30px; 
       
       border-radius: 15px 10px;  
       border-color: #000000; 
       padding: 10px;
-      background-color: #230F6E;border: 1px solid grey;
+      background-color: grey;
+      border: 1px solid grey;
       box-shadow: 10px 20px 40px grey, 0 0 10px black;
-
+      
     }
 
     #fondo{
@@ -88,6 +93,14 @@
       text-align: center;
 
     }
+
+    #submenu01 {
+
+    float: right;
+    text-align: center;
+    color: white;
+
+    }
     
     
     
@@ -95,35 +108,32 @@
     
   </head>
   <body class="body"  >
-        <div class="container" id="fondoprincipal">
-      
-    <!--<h1> {{ request()->is('/')? 'estas en home':'no lo estas' }} </h1>-->
-        <?php function activemenu($url){
 
-            return request()->is($url)? 'active':'' ;
-        } ?>
+      <nav class="navbar fixed-top navbar-dark bg-dark">
+  
 
-        <nav class="navbar " id="fondodivmenu">
           
-          <div>
-          <a class="navbar-brand" href="{{URL::to('/')}}">
-            <img src={{asset('images/Captura.png')}} width="80" height="80" class="d-inline-block align-center" alt="Logo" ">
+    
+      <div class="row">
+        <div class="col">
+
+        <a class="navbar-brand" href="{{URL::to('/')}}">
+            <img src={{asset('images/Captura.png')}} width="80" height="80" class="d-inline-block align-center" alt="Logo" >
                 Tu voto, tu candidato, tu decides!</a>
-          </div>
-        
-         
 
 
-          <ul class="nav justify-content-end">
 
-            
-          
+        </div>
 
-            <li class="nav-item pull-xs-right">
-         
+        <div class="col">
+         </div>
+      
+         {{-- <a class="navbar-brand active pull-xs-right"> --}}
+        {{-- pull-xs-right --}}
+         </div>
 
               @if(auth()->check())
-                      <a class="nav-link active pull-xs-right" href= "\logout">Cerrar sesion de <i class="glyphicon glyphicon-user">{{auth()->user()->name }}</a>
+                      <a class="nav-link active text-black"  href= "\logout">Cerrar sesion de <i class="glyphicon glyphicon-user">{{auth()->user()->name }}</i></a>
                       {{-- <a class="{{ activemenu('mensajes') }}" href= "{{ route('mensajes.index') }}">Mensaje</a> --}}
                       
               @endif
@@ -132,14 +142,13 @@
                           <a class="nav-link active text-black" href= "{{ "/login" }}">Login</a>
                           
               @endif
-      
-              </li>
-            
-
-          </ul>
          
-        </nav>
-         {{-- <a class="{{ activemenu('mensajes/create') }}" href= "{{ route('mensajes.create') }}">Contacto</a> --}}
+        
+</nav>
+  
+
+        <div class="container" id="fondoprincipal">
+      
         
         
 
@@ -147,21 +156,28 @@
 
         
         
-         <footer>
+         {{-- <footer>
           <div class="container" id="fondo">
             Derechos reservados
           </div>  
           
-        </footer>
+        </footer> --}}
         
-  
-        </div>
-
        
-  
         
+       
+        
+        {{-- <div class="container-fluid" id="fondoprincipal">
+          hola
+        </div> --}}
         
 
+        <nav class="navbar navbar-dark bg-dark">
+          <a class="navbar-brand " >Derechos reservados</a>
+        </nav>
+      
+
+ </div>
 
 
     <!-- Optional JavaScript -->
@@ -170,8 +186,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> --}}
   </body>
-
-
+  
   
 
 

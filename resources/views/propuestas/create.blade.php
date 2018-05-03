@@ -2,6 +2,8 @@
 
 @section('contenido')
 
+<div class="container" style="background-color: #eee; padding: 30px 10px 30px 10px ;" > 
+
 <br><div class="p-2 mb-2 bg-info text-white">
 	<h1>Nueva propuesta </h1>
 	</div>
@@ -36,4 +38,6 @@
 	</br>
 </form>
 @endif
+
+</div>
 @stop

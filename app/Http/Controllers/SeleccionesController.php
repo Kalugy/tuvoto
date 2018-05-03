@@ -39,13 +39,13 @@ class SeleccionesController extends Controller
         $next= Propuesta::where('key', '>',$varpropuesta->key)->min('key');
         // return Propuesta::where('key',$this->propuesta_id)->get();
 
-        //{{dd($varpropuesta);}}
+        // {{dd($varpropuesta);}}
         if(!is_null($varpropuesta))
             return view('selecciones.show', compact('varpropuesta','varkey'))-> with('next',$next);
         else
             return 'esto no sirve';
        
-    }
+    
 
     
     

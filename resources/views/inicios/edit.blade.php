@@ -1,8 +1,11 @@
 @extends ('layout')
 
+
 @section('contenido')
+
+<div class="container" style="background-color: #eee; padding: 30px 10px 30px 10px ;" > 
 <br><div class="p-2 mb-2 bg-info text-white">
-	<h1>Editar Elecciones </h1>
+	<h1>Editar esta eleccion </h1>
 	</div>
 </br>
 
@@ -20,6 +23,6 @@
 	<input type=submit class="btn btn-dark" value=Editar>
 	</br>
 </form>
-
+</div>
 
 @stop

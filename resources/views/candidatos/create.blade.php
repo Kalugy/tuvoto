@@ -3,6 +3,8 @@
 
 @section('contenido')
 
+<div class="container" style="background-color: #eee; padding: 30px 10px 30px 10px ;" > 
+
 <br><div class="p-2 mb-2 bg-info text-white">
 	<h1>Nuevo candidato </h1>
 	</div>
@@ -51,4 +53,5 @@
 	<input type=submit class="btn btn-dark" value=Enviar>
 </form>
 @endif
+</div>
 @stop

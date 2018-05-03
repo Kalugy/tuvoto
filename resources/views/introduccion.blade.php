@@ -1,4 +1,3 @@
-
 @extends ('layout')
 
 @section('contenido')
@@ -18,29 +17,29 @@
 	<div class="container-fluid">
 	<div class="w-80 p-3" style="background-color: #eee;">
   
-		<h2 class="text-primary">¿Qué es tu voto?</h2>
+		<h2 class="text-black">¿Qué es tu voto?</h2>
 
 
-		<p class="lead"><small class="text-muted">Tu voto es un aplicativo web que facilita información sobre las propuestas de los candidatos de una elección, y busca orientar o afianzar la decisión del usuario en la votación.
+		<p class="lead"><small class="text-black">Tu voto es un aplicativo web que facilita información sobre las propuestas de los candidatos de una elección, y busca orientar o afianzar la decisión del usuario en la votación.
 		Ofrece la posibilidad de elegir con cuales propuestas se tiene afinifdad y con cuales no
-		para finalmente arrojar resultados de favorabilidad respecto a cada candidato.</small>></p>
+		para finalmente arrojar resultados de favorabilidad respecto a cada candidato.</small></p>
 			
 
 
-		<h1 class="text-primary">¿Cómo funciona?</h1>
-		<p class="lead">Verás las propuestas una por una y sin saber a qué candidato pertenecen la mismas.
-		Debes marcar, mediante un slide, si estás "de acuerdo" o en "desacuerdo" con la propuesta, y pasar a la siguiente hasta terminar.
-		Con base en la selección realizada, se arrojan los resultados, mostrando la fotografía de los candidatos,los porcentajes de afinidad con cada uno y las propuestas(marcadas como "De acuerdo" y "desacuerdo") que te llevaron a obtener dicho resultado. </p>
+		<h1 class="text-black">¿Cómo funciona?</h1>
+		<p class="lead"><small class="text-black">Las propuestas se motraran una por una y sin saber a qué candidato pertenecen las mismas.
+		Se debe marcar, mediante un slide, si se esta "de acuerdo" o en "desacuerdo" con la propuesta, y pasar a la siguiente hasta finalizar.
+		Con base en la selección realizada, se arrojan los resultados, mostrando la fotografía de los candidatos,los porcentajes de afinidad con cada uno y las propuestas(marcadas como "De acuerdo" y "desacuerdo") que llevaron a obtener dicho resultado. </small></p>
 
-</div>
-	<br>
-	<div class="container justify-content-center">
-	<div class="w-50 p-3" style="background-color: #fff;">
+
+	
+	
+	<h1 style="color: black;" >¿De que se tratan las elecciones?</h1>
 		<table witdh="100%"  >
 			<thead>
 			  <tr>
 				  
-				    <th class="text-secondary">Tipo de Elecciones:</th>
+				    <h1><th class="text-black"></th></h1>
 				  
 			   
 
@@ -63,14 +62,12 @@
 			</tbody>
 
 		</table> 
-	</div>
-	</div>
+	
 	</br>
 		
-	<div class="container justify-content-center">
-	<div class="w-50 p-3" style="background-color: #fff;">
+	<h1>¿Quienes son los candidatos?</h1>
 	<table witdh="100%"  >
-	<h5 class="text-secondary">Candidatos</h5>
+	<h5 class="text-secondary"></h5>
 		<thead>
 		  <tr>
 
@@ -93,8 +90,7 @@
 
 		</tbody>
 	</table> 	
-	</div> 
-	</div>
+	
 
 
 <blockquote class="blockquote text-center">
@@ -106,6 +102,6 @@
 </form>
 </br></br>
 </blockquote>
-
+</div>
 
 @stop

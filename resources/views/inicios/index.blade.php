@@ -3,20 +3,46 @@
 
 @section('contenido')
 
-<br><div class="p-2 mb-2 bg-info text-white">
+
+
+<div class="container" style="background-color: #eee; padding: 30px 10px 30px 10px ;" > 
+
+<br>
+<div class="container" style="text-align: center;  color: white; background-color: #09126E;
+padding: 10px 10px 10px 10px;  ">
 	<h1>Administrador </h1>
 	</div>
 </br>
 
 	{{-- aca comienzan la tabla de inicio --}}
-	<h2><small class="text-muted"><strong>INICIO</strong></small></h2>
+
+	<div class="row">
+		<div class="col-3">
+
+
+			<div class="container" style="background-color: white">
+			<a href= "{{ route('inicios.create') }}">Agregar inicio</a>
+			<br>
+			<a href= "{{ route('candidatos.create') }}">Agregar candidato</a>
+			<br>
+			<a href= "{{ route('propuestas.create') }}">Agregar propuestas</a>
+			</div>
+		</div>	
+
+
+        <div class="col">
+	<br><div class="p-2 mb-2 bg-info text-white" style="text-align: center;">
+	<h2>Inicio </h2>
+	</div>
+</br>
 	
 	{{-- primero mostramos el link o boton para crear un inicio --}}
-	<a href= "{{ route('inicios.create') }}">Agregar inicio</a>
 	
-	<table witdh="100%" border="1" cellspacing="10" cellpadding="8">
-	<thead>
-	  <tr class=" table text-center table-dark">
+	
+	<table class="table " witdh="100%" border="1" cellspacing="8" cellpadding="8">
+	
+	<thead class="thead-dark">
+	  <tr>
 	    <th>  Tipo de Elección</th>
 	    <th>  Acción</th>
 	  </tr>
@@ -25,18 +51,23 @@
 		{{-- para mostrar cada dato de valor de inicio --}}
 	  	@foreach ($varinicio as $inicio)
 	  	<tr>
-			<td scope="row"> 
+			<td > 
 				{{-- <a href= "{{route('mensajes.show',$mensaje->id)}}"> --}}
 				{{$inicio->elecciones }}
 			
 			</td>
-			<td align="center" scope="row"> <a href= "{{ route('inicios.edit',$inicio->id )}}">Editar</a>
+			<td > 
+			<a href= "{{ route('inicios.edit',$inicio->id )}}">
+			<button type="submit" class="btn btn-outline-info btn-sm" >Editar</button></a>
+				</div>
 				
-			<form style="display:inline" method="POST" action="{{route('inicios.destroy',$inicio->id)}}">
+			<form style="display: inline-block;" method="POST" action="{{route('inicios.destroy',$inicio->id)}}">
 					{!!csrf_field()!!}
 					{!!method_field('DELETE')!!}
-					<br><button type="submit" class="btn btn-outline-primary btn-sm" >Eliminar</button></br>
+					<br><button type="submit" class="btn btn-outline-danger btn-sm" >Eliminar</button></br>
 			</form>		
+				
+		
 			</td>
 
 
@@ -50,8 +81,11 @@
 	<br>
 	
 	{{-- comienza la tabla de candidato --}}
-	<h2><small class="text-muted"><strong>CANDIDATO</strong></small></h2>
-	<a href= "{{ route('candidatos.create') }}">Agregar candidato</a>
+	<br><div class="p-2 mb-2 bg-info text-white" style="text-align: center;">
+	<h2>Candidatos </h2>
+	</div>
+</br>
+	
 	<table witdh="100%" border="1" cellspacing="10" cellpadding="8" >
 	<thead>
 	  <tr class="table text-center table-dark">
@@ -79,7 +113,7 @@
 				<form style="display:inline" method="POST" action="{{route('candidatos.destroy',$can->id)}}">
 					{!!csrf_field()!!}
 					{!!method_field('DELETE')!!}
-					<br><button type="submit" class="btn btn-outline-primary btn-sm">Eliminar</button></br>
+					<br><button type="submit" class="btn btn-outline-danger btn-sm">Eliminar</button></br>
 				</form>
 			</td>
 	  	</tr>
@@ -88,8 +122,11 @@
 	</table> 	 
 	<br></br>
 	{{-- aca comienzan las propuestas --}}
-	 <h2><small class="text-muted"><strong>PROPUESTAS</strong></small></h2>
-	<a href= "{{ route('propuestas.create') }}">Agregar propuestas</a>
+	 <br><div class="p-2 mb-2 bg-dark text-white" style="text-align: center;">
+	<h2>Propuestas </h2>
+	</div>
+</br>
+	
 	<table witdh="100%" border="1" cellspacing="10" cellpadding="8">
 	<thead>
 	  <tr class="table text-center table-dark">
@@ -109,7 +146,7 @@
 				<form style="display:inline" method="POST" action="{{route('propuestas.destroy',$propuesta->key)}}">
 					{!!csrf_field()!!}
 					{!!method_field('DELETE')!!}
-					<br><button type="submit" class="btn btn-outline-primary btn-sm">Eliminar</button></br>
+					<br><button type="submit" class="btn btn-outline-danger btn-sm">Eliminar</button></br>
 				</form>
 			</td>
 		  </tr>		
@@ -117,5 +154,9 @@
 	</tbody>
 	</table> 	 
 
+	</div>
+</div>
+
+</div>
 
 @stop	

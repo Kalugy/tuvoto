@@ -8,6 +8,7 @@ class Propuesta extends Model
 {
     // para prevenir inyeccion de datos por seguridad que solo reciba los siguientes datos
     protected $fillable=['descripcionpropuesta'];
+    //protected $fillable=['valorpropuesta'];
 	// protected $primaryKey = 'idpropuesta';
     /**
      * Get the candidato that owns propuesta.

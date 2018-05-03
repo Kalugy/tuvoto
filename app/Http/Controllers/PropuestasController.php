@@ -18,7 +18,8 @@ class PropuestasController extends Controller
     {
         //para mostrar la tabla peo todo lo hace inicios.index
         $varpropuesta = Propuesta::all();
-        return view('selecciones.index',compact('varpropuesta'));
+        //{{dd($varpropuesta);}}
+        return view('propuestas.index', compact('varpropuesta'));
     }
 
     /**
@@ -47,6 +48,7 @@ class PropuestasController extends Controller
         $can=$request->get('candidato');
         // miramos la propuesta que queremos guardar
         $Pro=$request->get('descripcionpropuesta'); 
+    
         // guardamos la propuesta del candidato "la llave foranea"
         Candidato::where('id', $can)->update(['propuesta_id' => $can]);
         
@@ -70,12 +72,15 @@ class PropuestasController extends Controller
      */
     public function show($key)
     {
-        // nunca se utiliza pero la coloque por si las moscas
-        $varpropuesta=Propuesta::find($key);
+        // mostrar propuestas individualmente 
+        $varpropuesta=Propuesta::where('key',$key)->first();
+        // propuesta siguiente
+        $next= Propuesta::where('key', '>',$varpropuesta->key)->min('key');
+        //{{dd($varpropuesta);}}
         if(!is_null($varpropuesta))
-            return view('selecciones.show',compact('varpropuesta'));
+            return view('propuestas.show', compact('varpropuesta'))-> with('next',$next);
         else
-            return view ('errors.404');
+            return 'esto no sirve';
        
     }
 

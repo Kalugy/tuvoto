@@ -33,7 +33,7 @@ Route::post('login','Auth\LoginController@login');
 Route::get('logout','Auth\LoginController@logout');
 
 //ruta para mostrar propuestas
-Route::get('/selecciones', 'SeleccionesController@index'); 
-Route::post('/selecciones', 'SeleccionesController@index');
-route::get('/selecciones/{key}', 'SeleccionesController@show')->where(['key' => '[0-9]+']);
-route::post('/selecciones/{key}', 'SeleccionesController@show')->where(['key' => '[0-9]+']);
+Route::get('/selecciones', 'PropuestasController@index'); 
+Route::post('/selecciones', 'PropuestasController@index');
+route::get('/selecciones/{key}', 'PropuestasController@show')->where(['key' => '[0-9]+']);
+route::post('/selecciones/{key}', 'PropuestasController@show')->where(['key' => '[0-9]+']);

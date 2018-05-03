@@ -2,6 +2,7 @@
 
 @section('contenido')
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,9 @@
 			  	<tr>
 					<td>
 					<ul> 
+						<?php echo e($prop->key)?>
 						<?php echo e($prop->descripcionpropuesta)?>
+						<?php echo e($prop->valorpropuesta)?>
 					</ul>
 					</td>
 
@@ -38,5 +41,6 @@
 	</br>
 	</div>
 </body>
-</html>				
+</html>
+				
 @stop

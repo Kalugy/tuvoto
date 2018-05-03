@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 use DB;
 use Carbon\Carbon;
 use App\Propuesta;
-
-
+use App\Candidato;
 use Illuminate\Http\Request;
 
-class SeleccionesController extends Controller
+class PropuestasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,30 +22,27 @@ class SeleccionesController extends Controller
         return view('selecciones.index', compact('varpropuesta'));
     }
 
+    
+
     /**
-     * Show the form for creating a new resource.
+     * Display the specified resource.
      *
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
-    public function show($id)
+    public function show($key)
     {
-        // nunca se utiliza pero la coloque por si las moscas
-        //$varpropuesta=Propuesta::find($key);
-        $varkey=Propuesta::find($id);
-        $varpropuesta=Propuesta::where('key',$id)->first();
+        // mostrar propuestas individualmente 
+        $varpropuesta=Propuesta::where('key',$key)->first();
         // propuesta siguiente
         $next= Propuesta::where('key', '>',$varpropuesta->key)->min('key');
-        // return Propuesta::where('key',$this->propuesta_id)->get();
-
         //{{dd($varpropuesta);}}
         if(!is_null($varpropuesta))
-            return view('selecciones.show', compact('varpropuesta','varkey'))-> with('next',$next);
+            return view('selecciones.show', compact('varpropuesta'))-> with('next',$next);
         else
             return 'esto no sirve';
        
     }
 
-    
-    
+   
 }

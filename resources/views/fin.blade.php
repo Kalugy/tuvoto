@@ -3,6 +3,6 @@
 @section('contenido')
 
 
-<h1>hola</h1>
+<h1>Fin</h1>
 
 @stop

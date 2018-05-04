@@ -3,38 +3,48 @@
 @section('contenido')
 
 
-<div class="container-fluid">
-	<div class="w-80 p-3" style="background-color: #eee;">
-<div class="blockquote text-center" style="background-color: lightgreen;">
-  <h1 class="display-3">Propuestas</h1>
+<div class="container" style="background-color: #eee; padding: 30px 10px 30px 10px ;" > 
 
-</div>
-	<br>
-	
-			<tbody>
-			<h2 class='text-center'>
-			<?php echo e($varpropuesta['descripcionpropuesta'])?>
+<div class="container" style="text-align: center;  color: white; background-color: #09126E;
+padding: 10px 10px 10px 10px;  ">
+	<h1>Propuestas</h1>
+	</div>
+
+
+
+<div class="container-fluid" style="background-color: #C1C1C1; margin: 1px; border-color: black; border-width: 5px;">
+		<div class="row" >
+		<div class="col">
 			
-			</h2>
 
-			</tbody>
-	</br>
+			{{$varpropuesta['descripcionpropuesta']}}
+		</div>
 		
-
-
+		<div class="col">
 <br>
 <div class="slidecontainer">
 <input type="range" name="edad" min="0" max="2" step="1" value="1">
 </div>
+</div>
+</div>
+ </div> 
 
 
-<blockquote class="blockquote text-right">
+	
+		
+
+
+
+
+<div class="container-fluid">
 <form method="POST" action="{{url('selecciones/'. $next)}}">
 {!! csrf_field() !!}
 <button type:"submit">Siguiente</button>
 </form>
-</blockquote>
+</div>
 </br>	
+
+</div>
 @stop
 				
 			

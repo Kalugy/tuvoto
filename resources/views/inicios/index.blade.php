@@ -16,21 +16,15 @@ padding: 10px 10px 10px 10px;  ">
 
 	{{-- aca comienzan la tabla de inicio --}}
 
-	<div class="row">
+	<div class="container-fluid" style="background-color: #C1C1C1; margin: 1px; border-color: black; border-width: 5px;">
+		<div class="row" >
 		<div class="col-3">
-
-
-			<div class="container" style="background-color: white">
 			<a href= "{{ route('inicios.create') }}">Agregar inicio</a>
-			<br>
-			<a href= "{{ route('candidatos.create') }}">Agregar candidato</a>
-			<br>
-			<a href= "{{ route('propuestas.create') }}">Agregar propuestas</a>
-			</div>
-		</div>	
+		</div>
+		
+		<div class="col">
 
 
-        <div class="col">
 	<br><div class="p-2 mb-2 bg-info text-white" style="text-align: center;">
 	<h2>Inicio </h2>
 	</div>
@@ -39,10 +33,10 @@ padding: 10px 10px 10px 10px;  ">
 	{{-- primero mostramos el link o boton para crear un inicio --}}
 	
 	
-	<table class="table " witdh="100%" border="1" cellspacing="8" cellpadding="8">
+	<table class="table bg-light" >
 	
-	<thead class="thead-dark">
-	  <tr>
+	<thead>
+	  <tr class="table bg-Secondary">
 	    <th>  Tipo de Elección</th>
 	    <th>  Acción</th>
 	  </tr>
@@ -79,16 +73,29 @@ padding: 10px 10px 10px 10px;  ">
 	</tbody>
 	</table> 	  	
 	<br>
+	</div>
+
+	</div>
+	</div>
 	
-	{{-- comienza la tabla de candidato --}}
+	
+	<div class="container-fluid" style="background-color: #C1C1C1;">
+		
+		<div class="row" >
+		<div class="col-3">
+		<a href= "{{ route('candidatos.create') }}">Agregar candidato</a>
+			<br>
+		</div>	
+		<div class="col">
+		{{-- comienza la tabla de candidato --}}
 	<br><div class="p-2 mb-2 bg-info text-white" style="text-align: center;">
 	<h2>Candidatos </h2>
 	</div>
 </br>
 	
-	<table witdh="100%" border="1" cellspacing="10" cellpadding="8" >
+	<table class="table bg-light" witdh="100%" cellspacing="10" cellpadding="8" >
 	<thead>
-	  <tr class="table text-center table-dark">
+	  <tr>
 	    <th>Candidato</th>
 	    <th>Partido</th>
 	    <th>Perfil</th>
@@ -121,15 +128,33 @@ padding: 10px 10px 10px 10px;  ">
 	</tbody>
 	</table> 	 
 	<br></br>
+
+</div>
+</div>
+
+
+
+	</div>
+
+	<div class="container-fluid" style="background-color:#C1C1C1 ;">
+		
+		<div class="row" >
+		<div class="col-3">
+		<a href= "{{ route('propuestas.create') }}">Agregar propuestas</a>
+			<br>
+		</div>	
+		<div class="col">
+	
+	
 	{{-- aca comienzan las propuestas --}}
-	 <br><div class="p-2 mb-2 bg-dark text-white" style="text-align: center;">
+	 <br><div class="p-2 mb-2 bg-info text-white" style="text-align: center;">
 	<h2>Propuestas </h2>
 	</div>
 </br>
 	
-	<table witdh="100%" border="1" cellspacing="10" cellpadding="8">
+	<table class="table bg-light" witdh="100%" >
 	<thead>
-	  <tr class="table text-center table-dark">
+	  <tr >
 	    <th>Propuestade</th>
 	    <th>Propuestas</th>
 	    <th>Accion</th>

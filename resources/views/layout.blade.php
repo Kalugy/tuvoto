@@ -109,7 +109,7 @@
   </head>
   <body class="body"  >
 
-      <nav class="navbar fixed-top navbar-dark bg-dark">
+      <nav class="navbar fixed-top navbar-dark bg-dark" >
   
 
           
@@ -118,7 +118,7 @@
         <div class="col">
 
         <a class="navbar-brand" href="{{URL::to('/')}}">
-            <img src={{asset('images/Captura.png')}} width="80" height="80" class="d-inline-block align-center" alt="Logo" >
+            <img src={{asset('images/Logo.png')}} width="50" height="80" class="d-inline-block align-center" alt="Logo" >
                 Tu voto, tu candidato, tu decides!</a>
 
 
@@ -173,7 +173,11 @@
         
 
         <nav class="navbar navbar-dark bg-dark">
-          <a class="navbar-brand " >Derechos reservados</a>
+          {{-- <a class="navbar-brand " >Derechos reservados</a> --}}
+          <div style="color: white; text-align: right; align-items: center;">
+            Derechos reservados
+          </div>
+
         </nav>
       
 

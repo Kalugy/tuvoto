@@ -20,7 +20,7 @@ class SeleccionesController extends Controller
         //para mostrar la tabla peo todo lo hace inicios.index
         $varpropuesta = Propuesta::all();
         //{{dd($varpropuesta);}}
-        return view('fin', compact('varpropuesta'));
+        return view('selecciones.index', compact('varpropuesta'));
     }
 
     /**

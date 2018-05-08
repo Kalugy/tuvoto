@@ -59,7 +59,7 @@
 <div class="container-fluid">
 <br><br><br>
 	
-	<form method="POST" action="{{ route('ventanas.update',$json_numerosaleatorios[$numero2]) }}">
+	<form method="POST" action="{{ route('ventanas.update','7') }}">
 	{!!method_field('PUT') !!}
 {{-- with('estoesunarray',$estoesunarray)) --}}
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -74,7 +74,7 @@
 
 	<br><br><br></br></br></br>
 	<div class="container " >
-	<button type:"submit">Siguiente</button>
+	<button type:"submit">Finalizar</button>
 	</div>
 	</form>
 </br></br></br>

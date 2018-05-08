@@ -19,6 +19,7 @@ class CreatePropuestasTable extends Migration
             $table->increments('key');
             $table->integer('id');
             $table->string('descripcionpropuesta');
+            $table->integer('valor')->default("0")->nullable();
             $table->timestamps();
         });
     }

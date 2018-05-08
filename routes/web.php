@@ -35,10 +35,10 @@ Route::post('login','Auth\LoginController@login');
 Route::get('logout','Auth\LoginController@logout');
 
 //ruta para mostrar propuestas
-Route::get('/selecciones', 'SeleccionesController@index'); 
-Route::post('/selecciones', 'SeleccionesController@index');
-route::get('/selecciones/{key}', 'SeleccionesController@show')->where(['key' => '[0-9]+']);
-route::post('/selecciones/{key}', 'SeleccionesController@show')->where(['key' => '[0-9]+']);
+// Route::get('/selecciones', 'SeleccionesController@index'); 
+// Route::post('/selecciones', 'SeleccionesController@index');
+// route::get('/selecciones/{key}', 'SeleccionesController@show')->where(['key' => '[0-9]+']);
+// route::post('/selecciones/{key}', 'SeleccionesController@show')->where(['key' => '[0-9]+']);
 
 
 Route::get('/muestras/[{cadena}]',['as'=>'muestra', 'uses'=>'introduccionController@muestra']);

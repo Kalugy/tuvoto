@@ -12,7 +12,7 @@
 
 <div class="container-fluid">
 	<div class="w-80 p-3" style="background-color: #eee;">
-<div class="blockquote text-center" style="background-color: lightgreen;">
+<div class="blockquote text-center" style="background-color: lightblue;">
   <h1 class="display-3">Propuestas</h1>
 
 </div>
@@ -26,6 +26,8 @@
 					<td>
 					<ul> 
 						<?php echo e($prop->descripcionpropuesta)?>
+						<?php echo e($prop->valorpropuesta)?>
+						<?php echo e($prop->key)?>
 					</ul>
 					</td>
 

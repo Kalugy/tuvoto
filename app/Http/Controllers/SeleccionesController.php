@@ -31,22 +31,45 @@ class SeleccionesController extends Controller
     
     public function show($id)
     {
-        // nunca se utiliza pero la coloque por si las moscas
         //$varpropuesta=Propuesta::find($key);
         $varkey=Propuesta::find($id);
         $varpropuesta=Propuesta::where('key',$id)->first();
         // propuesta siguiente
         $next= Propuesta::where('key', '>',$varpropuesta->key)->min('key');
-        // return Propuesta::where('key',$this->propuesta_id)->get();
-
-        // {{dd($varpropuesta);}}
+        //{{dd($varpropuesta);}}
         if(!is_null($varpropuesta))
             return view('selecciones.show', compact('varpropuesta','varkey'))-> with('next',$next);
         else
             return 'esto no sirve';
-       
-    
+    }
 
+public function store(Request $request)
+    {
+        // miramos el valor de la propuesta que queremos guardar
+        $val=$request->get('valorpropuesta');
+        
+        // esto es para guardar la prpuesta en la tabla propuesta con el id (llave foranea) y la propuesta
+        $flight = new Propuesta;
+        $flight->id = $can;
+        $flight->valorpropuesta = $val;
+        $flight->save();
+        // Nota: el save guarda los timestamps guarda ya actualiza el tiempo
+
+        //direccionar
+        
+
+    }
+    public function update(Request $request, $key){
+        // actualizamos con la key que nos llegue
+        Propuesta::where('key',$key)->update([
+            
+            "valorpropuesta"=> $request->input('valorpropuesta'),
+            "updated_at"=> Carbon::now(),
+        ]);
+
+        //redireccionamos
+        return redirect()->route('inicios.index');
+    }
     
     
 }

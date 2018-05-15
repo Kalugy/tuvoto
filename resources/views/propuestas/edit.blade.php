@@ -30,6 +30,12 @@
 	<label for="descripcionpropuesta">Propuesta</label>
 		<textarea class="form-control" name="descripcionpropuesta">{{$varpropuesta->descripcionpropuesta}}</textarea>  
 	</div>
+
+	<div class="form-group">
+	<label for="tipo">Tipo de Propuesta</label>
+		<textarea class="form-control" name="tipo">{{$varpropuesta->tipo}}</textarea>  
+	</div>
+
 	
 	<br>
 	<input type=submit class="btn btn-dark" value=Editar>

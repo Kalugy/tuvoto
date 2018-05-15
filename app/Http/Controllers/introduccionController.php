@@ -18,8 +18,6 @@ class introduccionController extends Controller
     }
 
 
-    
-
     public function introduccion() {
 		
 		

@@ -18,8 +18,9 @@ class CreateCandidatosTable extends Migration
             $table->increments('id');
             $table->string('candidato');
             $table->string('partido');
-            $table->string('perfil');
+            $table->text('perfil');
             $table->string('nombreprograma');
+            $table->string('imagen')->nullable();
             $table->integer('propuesta_id')->nullable();
             // $table->foreign('propuesta_id')->references('id')->on('propuestas');
             $table->timestamps();

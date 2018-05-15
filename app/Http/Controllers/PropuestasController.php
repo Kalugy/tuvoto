@@ -54,6 +54,9 @@ class PropuestasController extends Controller
         $flight = new Propuesta;
         $flight->id = $can;
         $flight->descripcionpropuesta = $Pro;
+        $flight->tipo=$request->input('tipo');
+       
+
         $flight->save();
         // Nota: el save guarda los timestamps guarda ya actualiza el tiempo
 
@@ -107,6 +110,7 @@ class PropuestasController extends Controller
         Propuesta::where('key',$key)->update([
             
             "descripcionpropuesta"=> $request->input('descripcionpropuesta'),
+            "tipo"=> $request->input('tipo'),
             "updated_at"=> Carbon::now(),
         ]);
 

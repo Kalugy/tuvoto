@@ -43,6 +43,11 @@ return [
 
     'disks' => [
 
+        'imgcandidatos' => [
+            'driver' => 'local',
+            'root' => public_path('imgcandidatos'),
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

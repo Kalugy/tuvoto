@@ -9,9 +9,10 @@
 	</div>
 </br>
 
-<form method="POST" action="{{ route('candidatos.update',$varcandidato->id) }}">
+<form method="POST" action="{{ route('candidatos.update',$varcandidato->id) }}" enctype="multipart/form-data">
 	{!!method_field('PUT') !!}
 	<input type="hidden" name="_token" value="{{ Session::token() }}">
+	<input type="hidden" name="img" value="{{$varcandidato->imagen}}">
 
 	<div class="form-group row">
 	<label for="candidato" class="col-sm-2 col-form-label">Candidato</label>
@@ -38,6 +39,13 @@
 	<label for="nombreprograma" class="col-sm-2 col-form-label">Nombre del programa</label>
 		<div class="col-sm-5">
 		<input type="text" class="form-control" name="nombreprograma" value="{{$varcandidato->nombreprograma}}">
+		</div>
+	</div>
+
+	<div class="form-group row">
+	<label for="urlImg" class="col-sm-2 col-form-label">imagen</label>
+		<div class="col-sm-5">
+		<input type="file"  class="form-control" name="urlImg">
 		</div>
 	</div>
 

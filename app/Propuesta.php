@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Propuesta extends Model
 {
     // para prevenir inyeccion de datos por seguridad que solo reciba los siguientes datos
-    protected $fillable=['descripcionpropuesta,valor'];
+    protected $fillable=['descripcionpropuesta,valor,tipo'];
 	// protected $primaryKey = 'idpropuesta';
     /**
      * Get the candidato that owns propuesta.

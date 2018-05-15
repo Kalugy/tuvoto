@@ -17,7 +17,7 @@
 	<h3>{{session('info')}}</h3>
 @else
 
-<form method="POST" action="{{ route('candidatos.store') }}">
+<form method="POST" action="{{ route('candidatos.store') }}" enctype="multipart/form-data">
 	<input type="hidden" readonly class="form-control-plaintext" name="_token" value="{{ Session::token() }}">
 
 	<div class="form-group row">
@@ -45,6 +45,14 @@
 	<label for="nombreprograma" class="col-sm-2 col-form-label">Nombre del programa</label>
 		<div class="col-sm-5">
 		<input type="text"  class="form-control" name="nombreprograma">
+		</div>
+	</div>
+
+
+	<div class="form-group row">
+	<label for="urlImg" class="col-sm-2 col-form-label">imagen</label>
+		<div class="col-sm-5">
+		<input type="file"  class="form-control" name="urlImg">
 		</div>
 	</div>
 

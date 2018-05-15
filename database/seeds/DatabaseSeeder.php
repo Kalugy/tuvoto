@@ -14,9 +14,14 @@ class DatabaseSeeder extends Seeder
     	//para repetir seeder infinitas sin añadir de mas
     	$this->truncateTables([
             'users',
+            'candidatos',
+            'propuestas',
         ]);
         //paracrearlosseeders de user
         $this->call(UserSeeder::class);
+        $this->call(Candidatoseeder::class);
+        $this->call(PropuestaSeeder::class);
+        $this->call(InicioSeeder::class);
     }
 
     // funcion para truncar las tablas cada vez que se cargue el php artisan migrate

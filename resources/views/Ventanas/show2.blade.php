@@ -59,7 +59,7 @@
 <div class="container-fluid">
 <br><br><br>
 	
-	<form method="POST" action="{{ route('ventanas.update','7') }}">
+	<form method="POST" action="{{ route('ventanas.update',$numerodekeys) }}">
 	{!!method_field('PUT') !!}
 {{-- with('estoesunarray',$estoesunarray)) --}}
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">

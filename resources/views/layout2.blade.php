@@ -28,13 +28,24 @@
       
     }  
     .body{
-      background-color: black; 
+     
+    
+    
+     
+  
+  
+      font-size: 100%;
+      font-family: 'Open Sans', sans-serif;
+      text-align: left;
+      
+      background-image: url('/img/6.jpg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
 
-      background-image: url('/images/Poly.png');
-      /* Margin bottom by footer height */
-        /*margin: 0;
-        margin-bottom: 40px;*/
-      /*background-image: url('/images/Poly.png';);*/
+      background-color: #464646;
+
     }  
     /*html {
     min-height: 100%;
@@ -52,7 +63,7 @@
       padding: 10px;
       background-color: grey;
       border: 1px solid grey;
-      box-shadow: 10px 20px 40px grey, 0 0 10px black;
+      /*box-shadow: 10px 20px 40px grey, 0 0 10px black;*/
       
     }
 
@@ -85,6 +96,17 @@
       padding: 10px;
       border-width: 50px; 
     }
+    #contenidoinfo{
+  border-style: solid;
+    filter:alpha(opacity=50); /* IE < 9.0 */
+    background: rgba(255, 255, 255, 0.5);
+    padding: 50px;
+    border-radius: 20px;
+    border-color: #545454;
+    border-width: 3px;
+    margin-top: 10px;
+
+}
     
 
     footer{
@@ -112,7 +134,7 @@
       
   
 
-        <div class="container" id="fondoprincipal">
+        <div class="container" id="contenidoinfo">
       
         
         

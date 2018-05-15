@@ -24,10 +24,10 @@
 
 
 <div class="container-fluid">
-	<div class="w-80 p-3" style="background-color: #eee;">
+	<div class="w-80 p-3" ">
 
 
-<div class="blockquote text-center" style="background-color: #7C42F2;">
+<div class="blockquote text-center" ">
   <h1 class="display-3">Propuestas</h1>
 </div>
 <div class="row" >

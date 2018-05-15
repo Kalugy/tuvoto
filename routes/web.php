@@ -20,6 +20,13 @@
 //la ruta para la ventana de home
 Route::get('/',['as'=>'introduccion', 'uses'=>'introduccionController@introduccion']);
 Route::get('/introduccion/{key}',['as'=>'introduccion.show', 'uses'=>'introduccionController@show']);
+
+ Route::get('test',function(){
+
+	return view('layout3');
+
+});
+
 //rutas predetermiandas por laravel para utilziar la base de datos
 //resource tiene muchas rutas para verlas es con php artisan r:l
 Route::resource('inicios','IniciosController');

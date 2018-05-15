@@ -24,11 +24,11 @@
 
 
 <div class="container-fluid">
-	<div class="w-80 p-3" style="background-color: #eee;">
+	<div class="w-80 p-3" >
 
 
-<div class="blockquote text-center" style="background-color: #7C42F2;">
-  <h1 class="display-3">Propuestas</h1>
+<div class="blockquote text-center" >
+  <h1 class="display-2">Propuesta de {{$varpropuesta->tipo}}</h1>
 </div>
 <div class="row" >
 		<div class="col-8">
